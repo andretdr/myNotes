@@ -1,3 +1,46 @@
+// USING SET STATE
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+  
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+
+  }
+ 
+// CANNOT DO IT THIS WAY AS STATE IS ASYNC
+// toggleVisibility(){ 
+//  this.setState({this.state.visibility: !this.state.visibility});
+// }
+
+// have to input a function
+  toggleVisibility(){ 
+    this.setState((state) => ({visibility : !state.visibility}));
+  }
+ 
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+
+
+
 // BINDING THIS
 
 class MyComponent extends React.Component {
