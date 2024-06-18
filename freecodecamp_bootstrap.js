@@ -1,5 +1,24 @@
+//https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php
+// GRID SYSTEM. Bootstrap uses 12 grid columnms system
+    <div class='row'>
+      <div class='col-xs-4'> // this div takes up 4 columns
+        <button class="btn btn-block btn-primary">Like</button>
+      </div>
+      <div class='col-xs-4'>
+        <button class="btn btn-block btn-info">Info</button>
+      </div>
+      <div class='col-xs-4'>
+        <button class="btn btn-block btn-danger">Delete</button>
+      </div>
+    </div>
 
 // https://www.w3schools.com/bootstrap5/bootstrap_buttons.php
+// BUTTON DANGER COLOR
+<button class="btn btn-block btn-danger">Delete</button>
+
+// BUTTON INFO
+<button class="btn btn-block btn-info">Info</button>
+
 // BUTTONS PRIMARY IS main app default button COLOR
 <button class="btn btn-block btn-primary">Like</button>
 
