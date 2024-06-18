@@ -1,6 +1,9 @@
 
 
-// SHOULDCOMPONENTUPDATE, DIDUPDATE
+// SHOULDCOMPONENTUPDATE, DIDUPDATE did just update.
+// DIDUPDATE runs each time state changes
+
+// USING LOCAL STORAGE(CACHE) for FORMS https://www.youtube.com/watch?v=2-lgIQEja5U
 
 class OnlyEvens extends React.Component {
   constructor(props) {
@@ -49,7 +52,7 @@ class Controller extends React.Component {
 
 
 
-// Add/ remove Event Listeners to COMPONENTDIDMOUNT n 
+// Add/ remove Event Listeners to COMPONENTDIDMOUNT did just mount. n 
 // WILLUNMOUNT CLEANUP METHOD
 // https://www.youtube.com/watch?v=AZXJzYbmgm0
 
@@ -96,6 +99,7 @@ class MyComponent extends React.Component {
 
 
 // Component Lifecycle, DIDMOUNT, USE FOR API OR SERVER CALLS, eventlistener. Then, RENDER in the render function. Will then be accurate.
+// MOUNT happens ONCE
 // https://www.youtube.com/watch?v=-S_WnDl9orU
 
 class MyComponent extends React.Component {
