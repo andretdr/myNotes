@@ -1,4 +1,6 @@
-// Add Event Listeners to COMPONENTDIDMOUNT
+// Add/ remove Event Listeners to COMPONENTDIDMOUNT n 
+// WILLUNMOUNT CLEANUP METHOD
+// https://www.youtube.com/watch?v=AZXJzYbmgm0
 
 class MyComponent extends React.Component {
   constructor(props) {
@@ -9,13 +11,17 @@ class MyComponent extends React.Component {
     this.handleEnter = this.handleEnter.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-  // Change code below this line
+  
+  // use for setting up 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress);
   }
-  componentWillUnmount() {
 
+  // Use for cleaning up. chat sockets, etc
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
   }
+  
   // Change code above this line
   handleEnter() {
     this.setState((state) => ({
@@ -38,7 +44,7 @@ class MyComponent extends React.Component {
 
 
 
-// Component Lifecycle, DIDMOUNT, USE FOR API OR SERVER CALLS. Then, RENDER in the render function. Will then be accurate.
+// Component Lifecycle, DIDMOUNT, USE FOR API OR SERVER CALLS, eventlistener. Then, RENDER in the render function. Will then be accurate.
 // https://www.youtube.com/watch?v=-S_WnDl9orU
 
 class MyComponent extends React.Component {
