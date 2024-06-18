@@ -1,14 +1,50 @@
+// Changing style CONDITIONALLY
+
+class GateKeeper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ input: event.target.value })
+  }
+
+  render() {
+    let inputStyle;
+    (this.state.input.length <= 15)
+      ? inputStyle = {border: '1px solid black'}
+      : inputStyle = {border: '3px solid red'}
+
+    return (
+      <div>
+        <h3>Don't Type Too Much:</h3>
+        <input
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
+      </div>
+    );}
+};
+
+
+
+// RENDER CONDITIONALLY FROM PROPS
+
 class Results extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return <h1>{
-      this.props.expression
-        ? 'You Win!'
-        : 'You Lose!'
-        }</h1>;
-}}
+    return <h1>
+    {this.props.fiftyFifty ? 'You Win!':'You Lose!'}
+          </h1>;
+  }
+}
 
 class GameOfChance extends React.Component {
   constructor(props) {
@@ -18,27 +54,24 @@ class GameOfChance extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
-  
   handleClick() {
   // THIS IS A DIFFERENT WAY TO SET THE STATE FROM PREVIOUS, BUT IT WORKS
     this.setState(prevState => {
       return {
         counter: prevState.counter+1
       }
-  });
+    });
   }
-  
   render() {
-    const expression = Math.random() >= .5; // Change this line
+    const expression = (Math.random() >= .5);
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>
         <Results fiftyFifty = {expression}/>
         <p>{'Turn: ' + this.state.counter}</p>
       </div>
-    );
-}}
-
+    );}
+}
 
 // TERNARY OPERATOR
 
