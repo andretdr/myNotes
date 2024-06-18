@@ -22,14 +22,17 @@
 // BUTTONS PRIMARY IS main app default button COLOR
 <button class="btn btn-block btn-primary">Like</button>
 
-// BUTTONS BLOCK LEVEL, width 100%
+// BUTTONS BLOCK LEVEL, width 100%, no longer inline element
 <button class="btn btn-default btn-block">Like</button>
 
 // BUTTONS CLASS
 <button class="btn btn-default">Like</button>
 
-// TEXT CENTER
-<h2 class="red-text text-center">
+// TEXT-DANGER, text danger COLOR
+<p>Things cats <span class='text-danger'>love:</span></p>
+
+// TEXT CENTER, TEXT PRIMARY is the primary text color
+<h2 class="text-primary text-center">
 
 // RESPONSIVE IMGS
 <img src="https:/running-cats.jpg" class="img-responsive" alt="Three kittens">
