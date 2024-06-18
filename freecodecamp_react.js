@@ -1,3 +1,21 @@
+
+
+
+// Component Lifecycle
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    console.log('hi')
+  }
+  render() {
+    return <div />
+  }
+};
+
+
 // PASSING FUNCTION DOWN TO CHILD
 
 class MyApp extends React.Component {
@@ -33,6 +51,7 @@ class GetInput extends React.Component {
       <div>
         <h3>Get Input:</h3>
         <input
+// passing these values down from parent
           value={this.props.input}
           onChange={this.props.handleChange}/>
       </div>
