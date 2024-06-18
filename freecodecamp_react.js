@@ -1,4 +1,45 @@
-// Component Lifecycle, DIDMOUNT, USE FOR API OR SERVER CALLS. render will then be accurate
+// Add Event Listeners to COMPONENTDIDMOUNT
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // Change code below this line
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+  componentWillUnmount() {
+
+  }
+  // Change code above this line
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+// Component Lifecycle, DIDMOUNT, USE FOR API OR SERVER CALLS. Then, RENDER in the render function. Will then be accurate.
+// https://www.youtube.com/watch?v=-S_WnDl9orU
 
 class MyComponent extends React.Component {
   constructor(props) {
@@ -6,6 +47,8 @@ class MyComponent extends React.Component {
     this.state = {
       activeUsers: null
     };}
+
+// will only run ONCE, when AFTER render. When state is updated, render will RE-render
   componentDidMount() {
     setTimeout(() => {
       this.setState({
@@ -13,6 +56,7 @@ class MyComponent extends React.Component {
       });
     }, 2500);
   }
+
   render() {
     return (
       <div>
@@ -22,7 +66,7 @@ class MyComponent extends React.Component {
 }
 
 
-// Component Lifecycle, WILLMOUNT
+// Component Lifecycle, WILLMOUNT MIGHT BECOME DEPRECIATED
 
 class MyComponent extends React.Component {
   constructor(props) {
