@@ -1,8 +1,9 @@
 // ADDING FONT AWESOME
 //<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 // i now becomes an ICON element for ICONS. Also can use SPAN
-<i class="fas fa-info-circle"></i>
-<button class="btn btn-block btn-primary"><i class='fas fa-thumbs-up'>Like</i></button>
+<button class="btn btn-block btn-primary"><i class='fas fa-thumbs-up'></i>Like</button>
+<button class="btn btn-block btn-danger"><i class="fas fa-trash"></i>Delete</button>
+<button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i>Info</button>
 
 
 //https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php
