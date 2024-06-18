@@ -1,5 +1,7 @@
 
-
+// WELL, CREATES a DIV with depth
+<div class='well'>
+</div>
 
 
 // FORM CONTROL
