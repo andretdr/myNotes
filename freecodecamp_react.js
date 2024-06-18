@@ -1,3 +1,37 @@
+
+
+// GIVING LIST ITEMS IN <li></li> A UNIQUE KEY VALUE
+// https://legacy.reactjs.org/docs/lists-and-keys.html
+
+const frontEndFrameworks = [
+  'React',
+  'Angular',
+  'Ember',
+  'Knockout',
+  'Backbone',
+  'Vue'
+];
+
+function Frameworks() {
+  const renderFrameworks = frontEndFrameworks.map(
+    item=>{
+      // GIVING EACH LIST ITEM A UNIQUE KEY, THIS ONE IS THE ACTUAL VALUE
+      // ALTERNATIVELY BUT SHOULD BE AVOIDED IS USING THE INDEX
+      // <li key={index}>{item}</li>
+      
+      return <li key={item}>{item}</li>
+      }
+  );
+  return (
+    <div>
+      <h1>Popular Front End JavaScript Frameworks</h1>
+      <ul>
+        {renderFrameworks}
+      </ul>
+    </div>
+  );};
+
+
 // USING ARRAY SPLIT AND MAP
 
 const textAreaStyles = {
