@@ -1,3 +1,20 @@
+// REACTDOMSERVER RENDERTOSTRING
+//https://www.freecodecamp.org/learn/front-end-development-libraries/react/render-react-on-the-server-with-rendertostring
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+// render the entire page to string as HTML for SERVER
+ReactDOMServer.renderToString(<App/>)
+
+
+
 // USING MAP AND FILTER 2
 
 class MyComponent extends React.Component {
