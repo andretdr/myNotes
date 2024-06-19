@@ -1,7 +1,23 @@
+// PAGE MODIFIER
+
+$("body").addClass("animated fadeOut");
+$('body').addClass('animated hinge');
+
+// .odd, .even
+// ODD EVEN SELECTORS, remember that JQ is 0 indexed so 1st element is even
+
+  $(".target:odd").addClass("animated shake");
+
+// .target:nth-child(n)
+// SELECT SPECIFIC ELEMENT OF CLASS, in below case, 3rd element of target class
+
+  $('.target:nth-child(3)').addClass("animated bounce");
+
 // .children(), DESCENDANTS
 // https://www.w3schools.com/jquery/jquery_traversing_descendants.asp
 // get all the targer's children
 
+  $('#right-well').children().css('color', 'orange');
 
 // .parent(), ANCESTORS
 // https://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
