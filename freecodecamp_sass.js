@@ -1,3 +1,12 @@
+// WHILE loop
+
+  $x: 1;
+  @while $x < 13 {
+    .col-#{$x} { width: 100%/12 * $x;}
+    $x: $x + 1;
+  }
+
+
 // EACH, for each loop. For a list, or for a map(MAP IS A DICT, KEY VALUE PAIR)
 
   // FOR EACH OF LIST
@@ -94,7 +103,8 @@ article {
 
 // SASS USES VARIABLES
 // ALL SASS OCCURS IN STYLE TAG 
-
+// FOR PROGRAMATICALLY CREATING STYLES AND RULES
+    
 <style type='text/scss'>
 
 $main-fonts: Arial, sans-serif;
