@@ -4,11 +4,13 @@
 $("h3").html("<em>jQuery Playground</em>");
 
 // .prop()
+// https://www.w3schools.com/jquery/html_prop.asp
 // CHANGING NON CSS PROPERTIES
 
 $('button').prop('disabled', true);
 
 // .css()
+// https://www.w3schools.com/jquery/jquery_css.asp
 // CSS CHANGING
 
 <script>
