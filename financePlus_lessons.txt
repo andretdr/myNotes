@@ -6,5 +6,9 @@ Dont put your credentials on public space
 Scrub your Github commit history
 https://www.youtube.com/watch?v=B3y-eH2Tkp8
 
-Use .env but dont publish your .env
+Use .env but dont publish your .env use .gotignore
 https://www.youtube.com/watch?v=17UVejOw3zA
+
+HEROKU, set your config VARs and dont use local .env
+https://www.youtube.com/watch?v=Rz886HkV1j4&t=0s
+https://devcenter.heroku.com/articles/getting-started-with-python#define-config-vars
