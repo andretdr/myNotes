@@ -1,4 +1,10 @@
-// .parent()
+// .children(), DESCENDANTS
+// https://www.w3schools.com/jquery/jquery_traversing_descendants.asp
+// get all the targer's children
+
+
+// .parent(), ANCESTORS
+// https://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
 // get the targer's parent
 
   $('#target1').parent().css('background-color', 'red')
