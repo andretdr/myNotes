@@ -1,6 +1,6 @@
 
 
-// SECURITY
+// SECURITY GITHUB
 Dont put your credentials on public space
 
 Scrub your Github commit history
@@ -8,6 +8,13 @@ https://www.youtube.com/watch?v=B3y-eH2Tkp8
 
 Use .env but dont publish your .env use .gotignore
 https://www.youtube.com/watch?v=17UVejOw3zA
+
+REMOVE TRACKED file from GITHUB
+https://stackoverflow.com/questions/3833561/why-doesnt-git-ignore-my-specified-file
+git rm --cached .env 
+
+REVERT TO PREV COMMIT, or UNDO the COMMIT
+https://www.youtube.com/watch?v=ml2N3APdoB0
 
 HEROKU, set your config VARs and dont use local .env
 https://www.youtube.com/watch?v=Rz886HkV1j4&t=0s
