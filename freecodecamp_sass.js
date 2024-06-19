@@ -1,17 +1,36 @@
+// EACH, for each loop. For a list, or for a map(MAP IS A DICT, KEY VALUE PAIR)
+
+  // FOR EACH OF LIST
+  // creates 3 new rules
+  @each $color in blue, red, green {
+    .#{$color}-text {color: $color;}
+  }
+  
+  // MAP or DICT
+  // creates 3 new rules
+  $colors: (color1: blue, color2: red, color3: green);
+  @each $key, $color in $colors {
+    .#{$color}-text {color: $color;}
+  }
+
+
+
 // COMBINING STR W VAR AND MATH OPERATIONS
 // for $var from start TO end (end exclusive), for $var from start THROUGH end (end inclusive)
 // FOR LOOP
 
-// col-#{$i} combines the string w var, 1-12
-@for $i from 1 through 12 {
-  .col-#{$i} { width: 100%/12 * $i; }
-}
-
-// 1-5, calculations are also possible
-@for $j from 1 to 6 {
-  .text-#{$j} { font-size: 15px * $j }
-}
-
+  // col-#{$i} combines the string w var, 1-12
+  // churns out 12 .col-n {} style rules
+  @for $i from 1 through 12 {
+    .col-#{$i} { width: 100%/12 * $i; }
+  }
+  
+  // 1-5, calculations are also possible
+  // churns out 5 .col-n {} style rules
+  @for $j from 1 to 6 {
+    .text-#{$j} { font-size: 15px * $j }
+  }
+  
 
 
 // if then else
