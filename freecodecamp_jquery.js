@@ -1,7 +1,27 @@
+// .clone()
+// COPY ELEMENT TO SOMEWHERE ELSE
+
+  // from #left-well,
+  $("#target2").clone().appendTo("#right-well");
+
+// .appendTO()
+// APPENDTO MOVE ELEMENTS FROM ONE DIV TO ANOTHER
+
+  // from #right-well,
+  $("#target4").appendTo("#left-well");
+
+// .remove()
+// REMOVE THE ELEMENT
+
+   $("#target4").remove();
+
+// .text(), like .innerHTML but ONLY affecting text, not HTML
+// https://www.w3schools.com/jquery/html_text.asp
 // .html(), like .innerHTML
 // CHANGING INNERHTML
 
 $("h3").html("<em>jQuery Playground</em>");
+$('#target4').html('<em>#target4</em>')
 
 // .prop()
 // https://www.w3schools.com/jquery/html_prop.asp
@@ -37,6 +57,7 @@ $('button').prop('disabled', true);
 
 // INITIALISING AT TOP OF PAGE
 // ALL JQUERY STARTS WITH $ or BLING
+// https://www.w3schools.com/jquery/
 
 <script>
   $(document).ready(function() {
