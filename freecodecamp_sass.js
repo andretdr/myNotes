@@ -1,3 +1,27 @@
+// EXTENDS add more rules to existing class rule. CSS can do this w overides or just combining classes
+
+  .panel{
+    background-color: red;
+    height: 70px;
+    border: 2px solid green;
+  }
+  
+  .big-panel{
+    @extend .panel;
+    width: 150px;
+    font-size: 2em;
+  }
+
+
+// PARTIALS are seperate smaller SASS files, starting w _ and ending with .scss
+// _variables.scss 
+// _mixins.scss
+// the MAIN scss file may still be called main.scss and have the following for importing
+
+  @import 'mixins'
+  @import 'variables'
+
+
 // WHILE loop
 
   $x: 1;
