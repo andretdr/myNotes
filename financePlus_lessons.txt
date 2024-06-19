@@ -9,9 +9,10 @@ https://www.youtube.com/watch?v=B3y-eH2Tkp8
 Use .env but dont publish your .env use .gotignore
 https://www.youtube.com/watch?v=17UVejOw3zA
 
-REMOVE TRACKED file from GITHUB
+REMOVE TRACKED file / folder from GITHUB, use with .gitignore
 https://stackoverflow.com/questions/3833561/why-doesnt-git-ignore-my-specified-file
 git rm --cached .env 
+git rm --cached ./folder/ 
 
 REVERT TO PREV COMMIT, or UNDO the COMMIT
 https://www.youtube.com/watch?v=ml2N3APdoB0
