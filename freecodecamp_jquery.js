@@ -1,3 +1,8 @@
+// .parent()
+// get the targer's parent
+
+$('#target1').parent().css('background-color', 'red')
+
 // .clone()
 // COPY ELEMENT TO SOMEWHERE ELSE
 
