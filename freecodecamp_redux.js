@@ -301,9 +301,48 @@ const immutableReducer = (state = todos, action) => {
   }
 };
 
-
 const store = Redux.createStore(immutableReducer);
 
+===============================
+JS SPREAD ... https://www.w3schools.com/react/react_es6_spread.asp
+===============================
+
+  const immutableReducer = (state = ['Do not mutate state!'], action) => {
+    switch(action.type) {
+      case 'ADD_TO_DO':
+        let newState = [...state, action.todo];
+        return newState;
+      default:
+        return state;
+    }};
+  
+  const addToDo = (todo) => {
+    return {
+      type: 'ADD_TO_DO',
+      todo
+    }}
+  
+  const store = Redux.createStore(immutableReducer);
+
+=======================================
+
+// REMOVE ITEM INDEX FROM ARRAY USING SLICE
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      return [...state.slice(0, action.index), ...state.slice(action.index+1, state.length+1)]
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
+}}
+
+const store = Redux.createStore(immutableReducer);
 
 
 
