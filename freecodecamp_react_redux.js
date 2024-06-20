@@ -167,12 +167,15 @@ class AppWrapper extends React.Component {
 ==============================================
 // CHANGE IT SUCH THAT message is now handled by REDUX, not REACT
 
-// Redux:
+// REDUX: WE DESIGN WHAT WE WHAT TO DO W THE STATE, AND ACTION, in this case ADD MESSAGE
+// type initializing
 const ADD = 'ADD';
 
+// action creator
 const addMessage = (message) => {
   return {type: ADD, message: message}};
 
+// reducer
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
@@ -181,31 +184,33 @@ const messageReducer = (state = [], action) => {
       return state;
   }};
 
+// create the store
 const store = Redux.createStore(messageReducer);
 
-// React:
-const Provider = ReactRedux.Provider;
-const connect = ReactRedux.connect;
+// REACT: VIEW
 
 class Presentational extends React.Component {
   constructor(props) {
     super(props);
+    // local state just for input.
+    // message is handled by REDUX now
     this.state = {
       input: '',
-      // REMOVED - MESSAGE: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
   }
   handleChange(event) {
     this.setState({
+      // changing local state here
       input: event.target.value
     });
   }
 
   submitMessage() {
-      // ADDED THIS LINE
-      this.props.submitNewMessage(this.state.input);
+      // changing REDUX state here, this.props.submitNewMessage is mapped below
+    this.props.submitNewMessage(this.state.input);
+      // changing local state here
     this.setState({input: ''})
   }
 
@@ -216,6 +221,7 @@ class Presentational extends React.Component {
         <input value={this.state.input} onChange={this.handleChange}/><br/>
         <button onClick={this.submitMessage}>Submit</button>
         <ul>
+          // this.props.messages is mapped below
           {this.props.messages.map( (message, idx) => {return (
             <li key={idx}>{message}</li>
             )})}
@@ -223,16 +229,23 @@ class Presentational extends React.Component {
       </div>
     );}};
 
+// MAPPINGS HERE
+// props.messages is mapped to the state
 const mapStateToProps = (state) => {
   return {messages: state}
 };
 
+// props.submitNewMessage is mapped to a function calling REDUX to dispatch(addMessage action creator) with the new message data passed in
 const mapDispatchToProps = (dispatch) => {
   return {submitNewMessage: (message) => {
       dispatch(addMessage(message))}}};
 
+// CONNECT will enable the Presentational component to use REDUX
+const connect = ReactRedux.connect;
 const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 
+// WRAPPER allows you to render the CONTAINER
+const Provider = ReactRedux.Provider;
 class AppWrapper extends React.Component {
   render() {
     return (
