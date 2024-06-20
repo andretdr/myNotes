@@ -69,4 +69,40 @@ const store = Redux.createStore(messageReducer);
           <DisplayMessages/>
         </Provider>
       )}};
+
+
+// MAPSTATETOPROPS
+===========================
+// using STORE.SUBSCRIBE() to implement mapStateToProps()
+// here we say what state you want to map to a props
+
+// state
+const state = [];
+
+// REACT props messages, mapped to REDUX state
+const mapStateToProps = (state) => {return {messages: state}}  
+
+// MAPDISPATCHTOPROPS
+============================
+  // using STORE.DISPATCH() to implement mapDispatchToProps()
+  // here we say what function(){dispatch(ACTIONCREATOR)} you want to map to a props
+
+// action creator
+const addMessage = (message) => {return {type: 'ADD', message: message}};
+
+// REACT props submitNewMessage, mapped to REDUX (message)=>{dispatch(addMessage(message))}
+const mapDispatchToProps = (dispatch) => {
+  return ({submitNewMessage: (message) => {dispatch(addMessage(message))}})
+}
+
+  
+
+
+
+
+
+
+
+
+
   
