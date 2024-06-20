@@ -122,6 +122,55 @@ const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presenta
   
 
 
+==============================
+// PRESENTAIONAL components are REACT COMPONENTS NOT DIRECTLY CONNECTED TO REDUX
+// CONTAINER components are REACT COMPONENTS DIRECTLY CONNECTED TO REDUX, DISPATCHING ACTION and passing STATE
+==============================
+
+// React:
+class Presentational extends React.Component {
+  constructor(props) {
+    super(props);
+.......
+    
+// React-Redux:
+const mapStateToProps = (state) => {
+  return { messages: state }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (newMessage) => {
+       dispatch(addMessage(newMessage))
+    }}};
+
+const Provider = ReactRedux.Provider;
+
+const connect = ReactRedux.connect;
+// Now your Presentational Component is a Container Component because its CONNECTED
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+    <Provider store={store}>
+      <Container/>
+    </Provider>
+    )}};
+
+
+
+
+
+
+
+
+
+  
+
 
 
 
