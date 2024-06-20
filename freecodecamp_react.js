@@ -886,12 +886,11 @@ class MyComponent extends React.Component {
 
 // JSX is CAMELCASE, HTML is KEBABCASE
 // STATEFUL COMPONENTS
+=========================
 
 class StatefulComponent extends React.Component {
   constructor(props) {
-
     super(props);
-
     this.state = {firstName : "name"}
 
   }
@@ -904,23 +903,72 @@ class StatefulComponent extends React.Component {
   }
 };
 
-// DEFAULT PROP / PROP TYPES
 
-const ShoppingCart = (props) => {
-  return (
-    <div>
-      <h1>Shopping Cart Component</h1>
-    </div>
-  )
-};
+=====================
+// PROPS
+=====================
 
-ShoppingCart.defaultProps = {quantity:10}
+const Welcome = (props) => <h1>Hello, {props.user}!</h1>
 
-ShoppingCart.propTypes = {quantity : PropTypes.number.isRequired}
+<App>
+  // pass the prop.user to Welome component
+  <Welcome user='Mark' />
+</App>
 
+// PASSING PROPS AS ARRAY
+========================
+  // you can now use array methods on the prop array here
+const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
+
+<ParentComponent>
+  // use the {} for the array
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+
+// DEFINING DEFAULT PROPS AND ENFORCING PROP TYPES
+=========================
+  // if no value is provide, it will use the default
+
+  const ShoppingCart = (props) => {
+  return (<div>
+            <h1>Shopping Cart Component</h1>
+                    // USE PROPS.QUANTITY
+            <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+          </div>)};
+
+  ShoppingCart.defaultProps = {quantity: 10}
+
+  ShoppingCart.propTypes = {quantity: PropTypes.number.isRequired}
+  ShoppingCart.propTypes = {handleClick: PropTypes.func.isRequired}
+
+  // another class calls the ShoppingCart Component
+  class OtherClass extends...
+  .....
+  render() {
+    return <ShoppingCart quantity={100} />
+  }
+
+// CLASS COMPONENTS USE THIS.PROPS
+===============================
+  class ShoppingCart extends....
+  .....
+  render() {
+    return (<div>
+            <h1>Shopping Cart Component</h1>
+                      // USE THIS.PROPS.QUANTITY
+            <h1>Current Quantity of Items in Cart: {this.props.quantity}</h1>
+          </div>)};
+  }
+    
+===================================  
+// TO RENDER COMPONENTS, 1st arg is the <componentToRender />, 2nd arg is the targetNode
+==================================
+ReactDOM.render(<App/>, document.getElementById('challenge-node'))
+  
   
 // REACT CLASS(STATEFUL) COMPONENT
 // ALWAYS render() {return (...)} some JSX ELEMENT which can be another <COMPONENT /> as well. this is called COMPOSITION
+// YOU CAN NEST COMPOSITION
 // Always starts with CAPITAL LETTER
 ====================================
   class ComponentClass extends React.Component {
@@ -987,7 +1035,7 @@ ShoppingCart.propTypes = {quantity : PropTypes.number.isRequired}
 );
   
 
-// REACT CONST COMPONENT
+// REACT CONST ELEMENTS
 ==========================
   
 const JSX = <section>
@@ -1000,24 +1048,11 @@ const JSX2 = <>
               <button>submit</button>
              <>
 
-// TO RENDER, 1st arg is the componentToRender, 2nd arg is the targetNode
+==================================
+// TO RENDER JSX, 1st arg is the componentToRender, 2nd arg is the targetNode
+==================================
 ReactDOM.render(JSX, document.getElementById('challenge-node'))
 
-
-// REACT CONST COMPONENT
-==========================
-  
-const JSX = <section>
-              <h1>Hello JSX!</h1>;
-              <button>submit</button>
-            </section>
-
-const JSX2 = <>
-              <h1>Hello JSX!</h1>;
-              <button>submit</button>
-             <>
-
-  
 ===============
 // HTML SETUP
 ===============
