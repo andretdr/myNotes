@@ -345,6 +345,33 @@ const removeItem = (index) => {
 const store = Redux.createStore(immutableReducer);
 
 
+==========================================
+  OBJECT.ASSIGN() FOR COPYING OBJECTS
+==========================================
+// https://www.w3schools.com/jsref/jsref_object_assign.asp
 
+// Create Target Object
+const person1 = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"};
+
+// Create Source Object
+const person2 = {firstName: "Anne",lastName: "Smith"};
+
+// Assign Source to Target, create newObj. 
+// {} is important to create new object and not modify old one
+const newObj = Object.assign({}, person1, person2);
+
+=======================
+  // example
+  
+const defaultState = {user: 'CamperBot', status: 'offline', friends: '732,982', community: 'freeCodeCamp'};
+
+const immutableReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'ONLINE':
+      const sourceState = {status: 'online'};
+      return Object.assign({}, state, sourceState);
+    default:
+      return state;
+}};
 
 
