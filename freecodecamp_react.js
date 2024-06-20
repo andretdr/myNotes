@@ -917,3 +917,37 @@ const ShoppingCart = (props) => {
 ShoppingCart.defaultProps = {quantity:10}
 
 ShoppingCart.propTypes = {quantity : PropTypes.number.isRequired}
+
+
+
+
+
+// REACT CONST COMPONENT
+==========================
+  
+const JSX = <h1>Hello JSX!</h1>;
+
+===============
+// HTML SETUP
+===============
+
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body>
+    <!-- Default container for site content -->
+    <div id="root"></div>
+  
+    <!-- LOAD REACT -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js" -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
+    <!-- LOAD BABEL -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+  
+    <!-- LOAD JSX FILE -->
+    <!-- HERE IS ALL YR JSX -->
+    <script src="root.js" type="text/jsx"></script>
+  </body>
