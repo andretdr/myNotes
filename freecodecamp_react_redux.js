@@ -46,3 +46,27 @@ const messageReducer = (state=[], action) => {
 };
 
 const store = Redux.createStore(messageReducer);
+
+======================================
+// REACT-REDUX PROVIDER
+======================================
+// PROVIDER takes 2 props, REDUX STORE and CHILD COMPONENTS of APP
+
+  // EXAMPLE
+  const Provider = ReactRedux.Provider;
+
+  <Provider store={store}>
+    <App/>
+  </Provider>
+
+  // FOR OUR EXCERCISE FROM ABOVE,
+  const Provider = ReactRedux.Provider;
+  
+  class AppWrapper extends React.Component {
+    render(){
+      return (
+        <Provider store={store}>
+          <DisplayMessages/>
+        </Provider>
+      )}};
+  
