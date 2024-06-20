@@ -95,7 +95,7 @@ const defaultState = {
     count ++;
   })
 
-
+===================================
 // COMBINING MULTIPLE REDUCERS INTO ROOT REDUCER
 // using combineReducers() method
 // ==========  Example  ===========
@@ -146,9 +146,10 @@ const defaultState = {
   
   const store = Redux.createStore(rootReducer);
 
-
+===============
 // SENDING DATA IN ACTIONS
 // JUST ADD THE DATA IN THE ACTION OBJECT OR ACTION CREATOR
+===============
   
   const ADD_NOTE = 'ADD_NOTE';
   
@@ -171,8 +172,58 @@ const defaultState = {
   console.log(store.getState());
 
 
+=================
+// MIDDLEWARE FOR ASYNC ACTIONS
+// REDUX THUNK middleware
+=================
+  // INITIALIZE
+  const store = Redux.createStore(
+  // any reducer
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+  );
+  
+  // FULL EXAMPLE
+  // ACTION TYPE DECLARATIONS
+  const REQUESTING_DATA = 'REQUESTING_DATA'
+  const RECEIVED_DATA = 'RECEIVED_DATA'
 
+  // just some ACTION OBJs
+  const requestingData = () => { return {type: REQUESTING_DATA} }
+  const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+  
+  // Use a SPECIAL ASYNC ACTION CREATOR which RETURNS a FUNCTION which uses DISPATCH as an arg  
+  const handleAsync = () => {
+    return function(dispatch) {
+      // Dispatch request action here
+      dispatch(requestingData())
+      // Simulating async process
+      setTimeout(function() {
+        let data = {
+          users: ['Jeff', 'William', 'Alice']
+        }
+        // Dispatch received data action here
+      dispatch(receivedData(data))
+      }, 2500);
+    }};
+  
+  const defaultState = {fetching: false, users: []};
 
+  // JUST A REDUCER, reducing action into state
+  const asyncDataReducer = (state = defaultState, action) => {
+    switch(action.type) {
+      case REQUESTING_DATA:
+        return {fetching: true, users: []}
+      case RECEIVED_DATA:
+        return {fetching: false, users: action.users}
+      default:
+        return state;
+  }};
+  
+  const store = Redux.createStore(
+    asyncDataReducer,
+    Redux.applyMiddleware(ReduxThunk.default)
+  );
 
 
 
