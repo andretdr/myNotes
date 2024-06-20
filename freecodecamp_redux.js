@@ -245,7 +245,64 @@ const defaultState = {
 
 
 
+=========================================
+  EXAMPLE
+=========================================
+// OBJECT TYPES DECLARATION
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
 
+// Define the counter reducer which will increment or decrement the state based on the action it receives
+const counterReducer = (state = 0, action) =>{
+  if (action.type === INCREMENT){
+      return state+1;}
+  else if (action.type === DECREMENT){
+      return state-1;}
+  else {return state;}
+}
+
+// Define an action creator for incrementing
+const incAction = () =>{
+  return {type: INCREMENT}
+}
+
+// Define an action creator for decrementing
+const decAction = () =>{
+  return {type: DECREMENT}
+}
+
+// Define the Redux store here, passing in your reducers
+const store = Redux.createStore(counterReducer);
+
+======================================
+IMMUTABILITY EXAMPLE ENSURE REDUCERS DONT MUTATE STATE BUT RETURN NEW VALUE
+======================================
+  
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+  'Go to the store',
+  'Clean the house',
+  'Cook dinner',
+  'Learn to code',
+];
+
+// Action Creator
+const addToDo = (todo) => {return {type: ADD_TO_DO, todo}}
+
+// Reducer
+const immutableReducer = (state = todos, action) => {
+  switch(action.type) {
+    case ADD_TO_DO:
+      return state.concat(action.todo);
+    default:
+      return state;
+  }
+};
+
+
+const store = Redux.createStore(immutableReducer);
 
 
 
