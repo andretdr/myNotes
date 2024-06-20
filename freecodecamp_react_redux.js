@@ -95,8 +95,31 @@ const mapDispatchToProps = (dispatch) => {
   return ({submitNewMessage: (message) => {dispatch(addMessage(message))}})
 }
 
-  
 
+===========================
+// CONNECT METHOD
+===========================
+// TAKES 2 OPTIONAL ARGUMENTS, mapStateToProps() and mapDispatchToProps()
+// If you want to omit one of the arguments to the connect method, you pass null in its place.
+  
+  connect(mapStateToProps, mapDispatchToProps)(MyComponent)
+
+// action creator
+const addMessage = (message) => {return {type: 'ADD', message: message}};
+// mapStateToProps
+const mapStateToProps = (state) => {return {messages: state}};
+// mapDispatchToProps
+const mapDispatchToProps = (dispatch) => {return {
+    submitNewMessage: (message) => {dispatch(addMessage(message));}}}
+
+class Presentational extends React.Component {
+  constructor(props) {super(props);}
+  render() {return <h3>This is a Presentational Component</h3>}};
+
+const connect = ReactRedux.connect;
+// Now Presentational component is connected
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+  
 
 
 
