@@ -918,15 +918,70 @@ ShoppingCart.defaultProps = {quantity:10}
 
 ShoppingCart.propTypes = {quantity : PropTypes.number.isRequired}
 
+// REACT STATELESS FUNCTIONAL COMPONENT
+// Always returns some JSX ELEMENT
+// Always starts with CAPITAL LETTER
+====================================
+  const Component = () =>{
+    return (
+      <>
+        <h1>Hi</h1>
+        <div className='customClass' />
+      <>
+  );}
 
+  
+// MUST ALWAYS SELF CLOSE THE TAG IF NOT OPENING/CLOSING TAG
+======================================
+  <br />
+  <hr />
 
+  
+// USING CLASSNAME
+// className instead of class
+====================================
+  
+  const JSX = (
+  <div>
+    // className instead of class
+    <h1 className='my-class'>Add a class to this div</h1>
+    // onClick, onChange instead of onclick, onchange etc
+    <button onClick={myFunction}>Submit</button>
+  </div>
+);
+  
+
+// REACT CONST COMPONENT
+==========================
+  
+const JSX = <section>
+              <h1>Hello JSX!</h1>;
+              <button>submit</button>
+            </section>
+
+const JSX2 = <>
+              <h1>Hello JSX!</h1>;
+              <button>submit</button>
+             <>
+
+// TO RENDER, 1st arg is the componentToRender, 2nd arg is the targetNode
+ReactDOM.render(JSX, document.getElementById('challenge-node'))
 
 
 // REACT CONST COMPONENT
 ==========================
   
-const JSX = <h1>Hello JSX!</h1>;
+const JSX = <section>
+              <h1>Hello JSX!</h1>;
+              <button>submit</button>
+            </section>
 
+const JSX2 = <>
+              <h1>Hello JSX!</h1>;
+              <button>submit</button>
+             <>
+
+  
 ===============
 // HTML SETUP
 ===============
