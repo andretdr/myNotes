@@ -918,8 +918,44 @@ ShoppingCart.defaultProps = {quantity:10}
 
 ShoppingCart.propTypes = {quantity : PropTypes.number.isRequired}
 
+  
+// REACT CLASS(STATEFUL) COMPONENT
+// ALWAYS render() {return (...)} some JSX ELEMENT which can be another <COMPONENT /> as well. this is called COMPOSITION
+// Always starts with CAPITAL LETTER
+====================================
+  class ComponentClass extends React.Component {
+  constructor(props) {
+    // calling super constructor passing in props
+    super(props);
+  
+    // initializing state
+    this.state = {
+      counter : 0,
+      message : [],
+      input : ''
+    }
+  }
+
+  // binding methods to THIS
+  this.getCounter() = this.getCounter().bind(this)
+  this.setMessage() = this.setMessage().bind(this)
+  
+  // methods
+  getCounter(){}
+  setMessage(){}
+
+  // RENDER
+  render() {
+    return (
+      <h1>Hi</h1>
+    );
+  }
+}
+
+
+  
 // REACT STATELESS FUNCTIONAL COMPONENT
-// Always returns some JSX ELEMENT
+// Always returns some JSX ELEMENT which can be another <COMPONENT /> as well. this is called COMPOSITION
 // Always starts with CAPITAL LETTER
 ====================================
   const Component = () =>{
