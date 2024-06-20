@@ -2,7 +2,7 @@
 // REDUX STORE HOUSES THE ENTIRE STATE OF THE APP. IT IS THE SINGLE SOURCE OF TRUTH
 // redux store obj takes in a REDUCER FUNCTION. It takes in STATE and ACTION and outputs a STATE 
 
-  // default variable (state = 5)
+  // setting default state here (state = 5)
   const reducer = (state = 5) => {
     return state;
   }
@@ -87,11 +87,64 @@ const defaultState = {
   };
 
 
+// STORE.SUBSCRIBE
+// for listener functions, SUBSCRIBE will run yr callback functions WHENEVER an action is dispatched against the store
+  
+  store.subscribe(()=>{
+    // update global count whenever action is dispatched
+    count ++;
+  })
 
 
+// COMBINING MULTIPLE REDUCERS INTO ROOT REDUCER
+// using combineReducers() method
+// ==========  Example  ===========
 
+  const rootReducer = Redux.combineReducers({
+    // KEY : REDUCER FUNCTION NAME
+    // KEY is used to for the piece of application state by REDUX
+    auth: authenticationReducer,
+    notes: notesReducer
+  });
 
+// ================================
 
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }};
+
+const rootReducer = Redux.combineReducers({
+  counter: counterReducer,
+  auth: authReducer
+})
+
+const store = Redux.createStore(rootReducer);
 
 
 
