@@ -255,7 +255,7 @@ class AppWrapper extends React.Component {
     );}};
 
 
-
+// USE STORE.SUBSCRIBE TO LISTEN TO ANY UPDATES IN STATE, ACROSS ALL YR COMPONENTS
   
 
 
