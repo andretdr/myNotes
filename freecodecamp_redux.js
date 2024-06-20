@@ -1,3 +1,18 @@
+// SUMMARY
+// REDUX STORE HOLDS THE ULTIMATE STATES FOR THE APP
+// ACTION OBJECTS HAVE TYPE AND MAYBE DATA
+//   TYPE IS USUALLY A PREDECLARED CONST
+//   ACTION CREATORS ARE FUNCTIONS THAT RETURN ACTION OBJ
+// STATE CAN BE OBJECT OR NOT
+// REDUCERS TAKE IN STATE AND ACTION FUNCTIONS AND RETURN STATE
+//  YOU INITIALISE DEFAULT STATE IN HERE
+//  MULTIPLE REDUCERS ARE COMBINED INTO ROOT REDUCER
+// STORE.DISPATCH TAKES IN ACTION CREATOR OR ACTION OBJ
+//  USES ROOT REDUCER TO RETURN STATE FROM ACTION AND STORE STORES IT
+// STORE.SUBSCRIBE TAKES IN CALLBACK WHICH RUNS EACH TIME ACTION IS DISPATCHED
+
+
+
 // INITIALISE
 // REDUX STORE HOUSES THE ENTIRE STATE OF THE APP. IT IS THE SINGLE SOURCE OF TRUTH
 // redux store obj takes in a REDUCER FUNCTION. It takes in STATE and ACTION and outputs a STATE 
@@ -44,9 +59,10 @@ const defaultState = {
     return {type: LOGIN}
   }
 
-
+=============
 // DISPATCH
-// store.dispatch() takes in ACTION OBJ and passes value to the STORE
+=============
+// store.dispatch() takes in ACTION OBJ and uses REDUCER FUNCTION to return a STATE which store saves
   store.dispatch(actionCreator());
   store.dispatch({ type: LOGIN});
 
@@ -86,9 +102,10 @@ const defaultState = {
     }
   };
 
-
+===================
 // STORE.SUBSCRIBE
 // for listener functions, SUBSCRIBE will run yr callback functions WHENEVER an action is dispatched against the store
+===================
   
   store.subscribe(()=>{
     // update global count whenever action is dispatched
