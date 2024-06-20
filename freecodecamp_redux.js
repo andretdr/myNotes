@@ -32,21 +32,23 @@ const defaultState = {
 // ACTIONS
 // action is an event from the app that will change the state of the store.
 // MUST carry a TYPE property, data is optional
-  const action = {type: 'LOGIN'}
+// TYPE IS CONVENTIONALLY A CONST
+  const LOGIN = 'LOGIN'
+  const action = {type: LOGIN}
 
 
 // ACTION CREATOR
 // a function that creates ACTION objects
-  
+  const LOGIN = 'LOGIN'
   const actionCreator = () => {
-    return {type: 'LOGIN'}
+    return {type: LOGIN}
   }
 
 
 // DISPATCH
 // store.dispatch() takes in ACTION OBJ and passes value to the STORE
   store.dispatch(actionCreator());
-  store.dispatch({ type: 'LOGIN' });
+  store.dispatch({ type: LOGIN});
 
 
 // REDUCER FUNCTION
@@ -54,15 +56,36 @@ const defaultState = {
 // ENFORCE IMMUTABILITY yrself
 
   const defaultState = {login: false};
-  const loginAction = () => {return {type: 'LOGIN'}};
+  const loginAction = () => {return {type: LOGIN}};
 
   const reducer = (state = defaultState, action) => {
-      return (action['type'] === 'LOGIN')
+      return (action['type'] === LOGIN)
       ? {login: true}
       : state
   };
 
   const store = Redux.createStore(reducer);
+
+
+// USING SWTICH FOR REDUCER
+  // types usually constant
+  const LOGIN = 'LOGIN'
+  const LOGIN = 'LOGIN'
+  
+  const loginUser = () => {return {type: LOGIN}};
+  const logoutUser = () => {return {type: LOGOUT}};
+
+  const authReducer = (state = defaultState, action) => {
+    switch (action.type){
+    case LOGIN:
+      return {authenticated: true};
+    case LOGOUT:
+      return {authenticated: false};
+    default:
+      return state;
+    }
+  };
+
 
 
 
