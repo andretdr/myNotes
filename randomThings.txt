@@ -1,0 +1,5 @@
+Read up on CDN, JS Imports, type module, require.
+
+Package Managers
+npm for js node
+pip, venv for python
