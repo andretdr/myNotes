@@ -167,25 +167,6 @@ class AppWrapper extends React.Component {
 ==============================================
 // CHANGE IT SUCH THAT message is now handled by REDUX, not REACT
 
-// REDUX: WE DESIGN WHAT WE WHAT TO DO W THE STATE, AND ACTION, in this case ADD MESSAGE
-// type initializing
-const ADD = 'ADD';
-
-// action creator
-const addMessage = (message) => {
-  return {type: ADD, message: message}};
-
-// reducer
-const messageReducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD:
-      return [...state, action.message];
-    default:
-      return state;
-  }};
-
-// create the store
-const store = Redux.createStore(messageReducer);
 
 // REACT: VIEW
 
@@ -228,6 +209,26 @@ class Presentational extends React.Component {
         </ul>
       </div>
     );}};
+
+// REDUX: WE DESIGN WHAT WE WHAT TO DO W THE STATE, AND ACTION, in this case ADD MESSAGE
+// type initializing
+const ADD = 'ADD';
+
+// action creator
+const addMessage = (message) => {
+  return {type: ADD, message: message}};
+
+// reducer
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [...state, action.message];
+    default:
+      return state;
+  }};
+
+// create the store
+const store = Redux.createStore(messageReducer);
 
 // MAPPINGS HERE
 // props.messages is mapped to the state
