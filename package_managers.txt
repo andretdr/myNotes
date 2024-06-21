@@ -1,2 +1,0 @@
-npm for js
-pip, venv for python
