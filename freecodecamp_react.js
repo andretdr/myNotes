@@ -961,9 +961,14 @@ const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
   }
     
 ===================================  
-// TO RENDER COMPONENTS, 1st arg is the <componentToRender />, 2nd arg is the targetNode
+// TO RENDER COMPONENTS
 ==================================
-ReactDOM.render(<App/>, document.getElementById('challenge-node'))
+// THIS IS DEPRECIATED! ReactDOM.render(<App/>, document.getElementById('challenge-node'))
+// INSTEAD, DO
+  const domContainer = document.getElementById('root');
+  const root = ReactDOM.createRoot(domContainer);
+
+  root.render(<App />);
   
   
 // REACT CLASS(STATEFUL) COMPONENT
