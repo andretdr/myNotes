@@ -43,9 +43,10 @@ import { useState } from 'react'
 export default function Counter() {
 
     // var and setFunction pairs
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0) // 0 is the default for the state count
+    const [user, setUser] = useState({isSubscribed: true, name: 'Kouki'}) // default value
 
-    const handleIncrement = () => setCount(count+1)
+    const handleIncrement = () => setCount(count+1) // here we set how we want to change the state
     const handleDecrement = () => setCount(count-1)
 
     return (
@@ -58,6 +59,7 @@ export default function Counter() {
     )
 }
 
+
 // USESTATE HOOK
 ////////////////////////////////
 
@@ -67,15 +69,20 @@ import { useState } from 'react'
 // initialise state
 // count is the var, setCount is the name of function you want to update the state with, initial state set at 0 each time app loads
 
-// var and setFunction pairs
-const [count, setCount] = useState(0)
+// var and setFunction(this is just the name. dont have to implement it) pairs. useState sets the state behind the scences
+const [count, setCount] = useState(0) // 0 is the default for the state count
 // once state is updated, will cause rerender of component.
-    
+
+
 // USEEFFECT HOOK
 ///////////////////////////////
+// https://www.youtube.com/watch?v=-4XpG5_Lj_o&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=2
+// for doing sometype of side effect. Side effect mostly comes from state change
 // SETSTATE IS ASYNCHRONOUS
 // therefore to correctly use {count} after setState you need to use useEffect hook
 
+
+    
     // this will error out
     <button onClick={() => {
           setCount(count+1)
@@ -83,7 +90,14 @@ const [count, setCount] = useState(0)
     }}>Add 1</button>
 
     // instead, use
-    useEffect(() => console.log(value), [value])
+    useEffect(() => {
+    // code 
+    .....
+    // optional return function
+    }, 
+    []); //dependancies are what it should listen to
+
+    useEffect(() => {console.log(value)}, [value]);
 
     // Also, instead of 
     setCount(count+1)
@@ -91,15 +105,15 @@ const [count, setCount] = useState(0)
     // use
     setCount((prevCount) => prevCount+1)
 
-// useEffect allows you to use side effects.
+// useEffect DEPENDENCIES
 // useEffect accepts 2 arguments, callback and array of dependencies
-// if array of dependencies is empty, callback will execute AFTER COMPONENT RENDERS
+// if array of dependencies is empty, callback will execute ONCE AFTER COMPONENT MOUNTS
 useEffect(() => { console.log('component rendered!'}, [])
 
 // if we want callback to execute AFTER VAR STATE CHANGES, do
 useEffect(() => { console.log('count changed!'}, [count])
 
-// can be used to run cleanUp functions on unmounts. WHEN COMPONENTS UNMOUNT, do
+// can be used to run CLEANUP FUNCTION on unmounts. WHEN you have a RETURN FUNCTION, it RETURNS ON COMPONENT UNMOUNT, the next time useEffect is triggered. set timeout ETC
 // https://blog.logrocket.com/understanding-react-useeffect-cleanup-function/
 useEffect(() => { fetchDate() return cleanUp()}, [])
 
@@ -115,8 +129,32 @@ useEffect(() => { fetchDate() return cleanUp()}, [])
 import { createContext } from 'react'
 // createContext with initial state null
 const Context = createContext(null)
-
 export default Context
+
+// ALT SOLUTION
+import { User } from '../useContext'
+const Context = createContext<User | undefined>(undefined); // of type User or undefined
+export default Context
+
+    // creating custom hook to resolve undefined error
+export function useUserContext() {
+    const user = useContext(Context);
+    if (user === undefined) {
+        throw new Error('User must be provided')
+    }
+    // now we know we confirm will always only have value user and not undefined
+    return user;
+}
+
+
+// component where User state is from
+
+export interface User {
+    isSubscribed: boolean;
+    name: string;
+}
+
+
 
 // contextProvider is a high order component. Component that returns a component
 /// ContextProvider.js
@@ -140,6 +178,16 @@ const ContextProvider = ({children}) => {
     )
 }
 
+/* ALT solution
+    return (
+        <Context.Provider value={User} >
+            {children}
+        </Context.Provider>
+    )
+*/
+
+
+
 export default ContextProvider
 
 // In app.js, we wrap all the components we want to interact w contextProvider.
@@ -160,6 +208,9 @@ import Context from '../../context/Context'
 const Header = () => {
     // using from context
     const { darkModeOn, setDarkModeOn, englishLanguage, setEnglishLanguage } = useContext(Context)
+    // ALT SOLUTION
+    const user = useUserContext() // from custom hook to ensure no undefined error
+    
     // local state
     const [showMobileMenu, setShowMobileMenu] = useState(false)
 
@@ -180,7 +231,9 @@ const Header = () => {
 
 // USEREDUCER HOOK
 //////////////////////////////////////////////////////
-
+// similar to useSTATE but handles complex state logic in a more modular way
+// https://www.youtube.com/watch?v=rgp_iCVS8ys&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=7
+    
 // using reducers to manage state interactions
 // App.js
 
