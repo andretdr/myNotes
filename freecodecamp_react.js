@@ -14,7 +14,7 @@ ReactDOM.render(JSX, document.getElementById('challenge-node'))
     <!-- Default container for site content -->
     <div id="root"></div>
   
-    <!-- LOAD REACT -->
+    <!-- LOAD REACT, here we are using CDN. We can just use vite instead -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js" -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
