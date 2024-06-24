@@ -140,11 +140,14 @@ const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presenta
   
 // USESELECTOR 
 // in the child component that needs to access the store state
+// create the mapping using useSelector and access the state directly
 const bgColor = useSelector((reduxState) => reduxState.color)
     return  <div style={{backgroundColor: bgColor}}>
 
 // USEDISPATCH
-//
+// in the child component that needs to access to the store to dispatch an action
+// create the mapping using useDispatch to directly dispatch an action creator
+  
 
             
 
