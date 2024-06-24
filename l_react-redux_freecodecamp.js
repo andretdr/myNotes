@@ -121,6 +121,32 @@ const connect = ReactRedux.connect;
 const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational);
   
 
+=========================================
+=========================================
+// ALTERNATIVE TO USING CONNECT, MAPSTATE/DISPATCH
+// USING HOOKS, BETTER FOR WHEN USING COMPONENT FUNCTIONS.
+=========================================
+// classes CANNOT USE CONNECT, so this is the alternative
+// https://react-redux.js.org/api/hooks
+
+// instead of declaring MAPDISPATCHTOPROPS and MAPSTATETOPROPS
+// We just use hooks, useSelector for directly selecting store-state
+// and useDispatch for directly dispatching store-state
+
+// You will NEED to still wrap your app in the PROVIDER to makesure the app gets the entire store
+  <Provider store={store}>
+    <App />
+  </Provider>
+  
+// USESELECTOR 
+// in the child component that needs to access the store state
+const bgColor = useSelector((reduxState) => reduxState.color)
+    return  <div style={{backgroundColor: bgColor}}>
+
+// USEDISPATCH
+//
+
+            
 
 ==============================
 // PRESENTAIONAL components are REACT COMPONENTS NOT DIRECTLY CONNECTED TO REDUX
