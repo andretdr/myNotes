@@ -9,11 +9,13 @@ npm install react-router-dom@6
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage.jsx';
+import Profiles from './pages/Profiles.jsx';
+import Error from './pages/Error.jsx';
 
 const router = createBrowserRouter([
-    {path: '/', element: <HomePage />},
-    {path: '/profiles', element: <Profiles />}
+    {path: '/', element: <HomePage />, errorElement: <Error />},
+    {path: '/profiles', element: <Profiles />, errorElement: <Error />}
 ]);
 
 
@@ -22,3 +24,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Router.Provider router={router} />
   
 )
+
+// LINK
+
+import { Link } from 'react-router-dom';
+
+export default function NotFoundPage() {
+    return 
+        <div> 404 Not Found
+            <Link to="/">Home</Link> // THIS JUST DOES A JS RERENDER ON CLIENTSIDE FOR THE SCREEN. BETTER!
+            <a href="/">Home</a> // THIS DOES A FULL REFRESH GOING TO THE LINK
+        <div>
+}
