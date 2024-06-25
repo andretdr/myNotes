@@ -691,3 +691,34 @@ https://icons.getbootstrap.com/#install
     </div>
 
   </form>
+
+# TOOLTIP
+############
+https://getbootstrap.com/docs/5.0/components/tooltips/
+    requires abit of JS
+
+    <!-- TOOLTIP 
+      https://getbootstrap.com/docs/5.0/components/tooltips/
+      
+      place what you want to tooltip into a span with custion class for yr JS to pickup
+      
+      data-bs-placement is where you want your tooltip to appear
+
+      <span class="my_tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
+        ... yr element here ...
+        <img src="/assets/ebook-cover.png" class="img-fluid" alt="ebook">
+      </span>
+      
+
+      Add this script at the end
+
+      <script>
+        const tooltips = document.querySelectorAll('.my_tt')
+        tooltips.forEach(t => {
+          new bootstrap.Tooltip(t)
+        })
+      </script>
+
+      -->
+
+
