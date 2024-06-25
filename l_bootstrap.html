@@ -9,16 +9,27 @@ accordian drop down sections to hide or show info
 
 # SHORTKEYS
 #################
-h1 tag, class display-1
 h1.display-1 +tab
     <h1 class="display-1"></h1>
 p.lead.text-center +tab
     <p class="lead text-center"></p>
 
+section#pricing +tab
+    <section id="pricing">
+
+Lorem20 +tab (can specify the 'n' number of lorems)
+
 shift + alt + up/down to duplicate lines
 
 alt+click different spots, type
 
+
+# TIPS and TRICKS
+#######################
+d-none d-lg-block
+    display none, until large screen, then display this block
+        
+        
 # INITIALIZING
 ###################
 <head>
@@ -392,3 +403,72 @@ alt+click different spots, type
       </div>
     </div>
   </nav>    
+
+
+    
+# CARDS
+#################
+
+ <!-- CARDS -->
+   <!-- https://getbootstrap.com/docs/5.0/components/card/ -->
+
+   <!-- light grey bg, margintop 5 -->
+  <section id="pricing" class="bg-light mt-5">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2>Pricing Plans</h2>
+        <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+      </div>
+      <!-- row, gutter/gap = 0 (the space between columns) -->
+      <div class="row my-5 g-0 align-items-center justify-content-center">
+        <!-- container for the card. default col8, large screen col4, xxl col3 -->
+        <div class="col-8 col-lg-4 col-xl-3">
+          <!-- declare card, no border -->
+          <div class="card border-0">
+            <!-- card body -->
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Starter Edition</h4>
+              <p class="lead card-subtitle">eBook download only</p>
+              <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+              <!-- display is none, until lg screen then display block -->
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9 col-lg-4">
+          <!-- border around the card -->
+          <div class="card border-primary border-2">
+            <!-- card-header CREATES A LITTLE STRIP AT THE TOP -->
+            <div class="card-header text-center text-primary">Most Popular</div>
+            <div class="card-body text-center py-5">
+              <h4 class="card-title">Complete Edition</h4>
+              <p class="lead card-subtitle">eBook download & all updates</p>
+              <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Ultimate Edition</h4>
+              <p class="lead card-subtitle">download, updates & extras</p>
+              <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
