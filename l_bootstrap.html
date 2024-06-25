@@ -1,5 +1,6 @@
 # Bootstrap 5, RTL support
 ################################
+https://youtu.be/O_9u1P5YjVc?si=UX6ZWvnpu5RoYIk3
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 This can be found in e:/myPrograms/bootstrap/
 
@@ -39,7 +40,8 @@ use grids to create diff widths at diff sizes. try not to use numbers.
         
 d-none d-lg-block
     display none, until large screen, then display this block
-        
+
+bootstrap doesnt use IDs, thats just for us
         
 # INITIALIZING
 ###################
@@ -836,6 +838,45 @@ https://youtu.be/nCX3QVl_PiI?si=MYK2cvtn4q_4K-ON
 
 
 
+# TABS
+##########
 
+https://getbootstrap.com/docs/5.0/components/navs-tabs/#tabs
 
-    
+   <nav>
+        <!-- these are the tab buttons here -->
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <!-- by default one of them is active 
+              the data-bs-target targets an id of the content below 
+          -->
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+      </div>
+
+    </nav>
+
+        <!-- these are the content -->
+    <div class="tab-content" id="nav-tabContent">
+
+      <!-- this one is default show, aria shows the above element lables this one -->
+      <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <h2>Home</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio provident corporis aut, ipsa tenetur vel illo excepturi voluptate molestiae magnam, totam est id alias dicta a assumenda corrupti et repellat.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio provident corporis aut, ipsa tenetur vel illo excepturi voluptate molestiae magnam, totam est id alias dicta a assumenda corrupti et repellat.</p>
+      </div>
+
+      <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <h2>Profile</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, cupiditate nam aperiam possimus, ratione modi enim inventore reiciendis ipsum mollitia, adipisci accusamus! Dolorem omnis illo incidunt ex, sit minus numquam.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, cupiditate nam aperiam possimus, ratione modi enim inventore reiciendis ipsum mollitia, adipisci accusamus! Dolorem omnis illo incidunt ex, sit minus numquam.</p>
+      </div>
+
+      <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptates nostrum vel officiis! Magni animi assumenda numquam exercitationem facilis! Excepturi, doloremque illo. Voluptate, natus molestias? Enim repellendus earum ad sunt!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptates nostrum vel officiis! Magni animi assumenda numquam exercitationem facilis! Excepturi, doloremque illo. Voluptate, natus molestias? Enim repellendus earum ad sunt!</p>
+      </div>
+      
+    </div>
+  </div>
