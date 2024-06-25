@@ -58,6 +58,7 @@ alt+click different spots, type
   <p class="text-decoration-underline">this is underlined text</p>
   <p class="text-decoration-line-through">this is line-through text</p>
   <p class="fw-bold">this bold text</p>
+  <p class="text-muted">this muted text</p>
   <small>this is small text</small>
 
   <!-- TEXT COLORS -->
@@ -164,6 +165,12 @@ alt+click different spots, type
 
 # CONTAINERS
 #################
+
+# WHEN DOING RESPONSIVE DESIGN, WHEN USING container-md, col-lg, text-md etc, THE DEFAULT CLASS HANDLES ALL
+# THE SMALL SCREENS UP UNTIL THE BREAK WE DEFINE
+#       <!-- small screens col 12 text centered, md screens col5 text start -->
+#       <div class="col-md-5 text-center text-md-start">
+##################
 
   <!--https://getbootstrap.com/docs/5.3/layout/containers/#responsive-containers-->
   <!-- different sizes, will only click to MAX-WIDTH at diff sizes, otherwise 100%width before that -->
@@ -292,4 +299,35 @@ alt+click different spots, type
   </div>
 
 
+# GRID DEMO
+#####################
 
+<!-- main image & intro text -->
+  <section id="intro">
+    <!-- 100% width until large screen -->
+    <div class="container-lg">
+      <!-- JUSTIFY CONTENT FOR HORIZONTAL, ALIGN ITEMS FOR VERTICAL -->
+      <div class="row g-4 justify-content-center align-items-center">
+        <!-- small screens col 12 text centered, md screens col5 text start -->
+        <div class="col-md-5 text-center text-md-start">
+          <h1>
+            <div class="display-2">Black-Belt</div>
+            <div class="display-5 text-muted">Your Coding Skills</div>
+          </h1>
+          <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos?</p>
+          <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+        </div>
+        <!-- small screens col 12 text centered, md screens col5 text start -->
+        <!-- d is display. d-none for small screens, d-md-block display block when reaches medium screen -->
+        <div class="col-md-5 text-center d-none d-md-block">
+          <!-- class IMG-FLUID will make the img conform to col container -->
+          <img class="img-fluid" src="/assets/ebook-cover.png" alt="ebook">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+#
+###############################
