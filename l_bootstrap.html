@@ -17,6 +17,8 @@ p.lead.text-center +tab
 
 shift + alt + up/down to duplicate lines
 
+alt+click different spots, type
+
 # INITIALIZING
 ###################
 <head>
@@ -202,6 +204,92 @@ shift + alt + up/down to duplicate lines
   </div>
 
 
-#
-##################################
-  
+# GRID
+#########
+
+  <!-- https://getbootstrap.com/docs/5.3/layout/grid/ -->
+  <!-- 12 col width system -->
+   <!-- GRIDS ALWAYS GO INSIDE CONTAINER -->
+  <div class="container-lg my-5">
+    <h2>basic grid</h2>
+    <!-- FIRST WE CREATE THE ROWS CLASS-->
+    <div class="row">
+      <!-- THEN WE CREATE THE COLUMNS CLASS-->
+      <!-- when we dont specify anything else, they take up equal spacing -->
+      <div class="col">
+        <div class="p-5 bg-primary text-light">col 1</div>
+      </div>
+      <div class="col">
+        <div class="p-5 bg-primary text-light">col 2</div>
+      </div>
+      <div class="col">
+        <div class="p-5 bg-primary text-light">col 3</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- specifying individually -->
+
+  <div class="container-lg my-5">
+    <h2>column widths</h2>
+    <div class="row">
+      <!-- taking width6 col, totalling 12 cols -->
+      <div class="col-6">
+        <div class="p-5 bg-primary text-light">col 1</div>
+      </div>
+      <!-- taking width3 col, totalling 12 cols -->
+      <div class="col-3">
+        <div class="p-5 bg-primary text-light">col 2</div>
+      </div>
+      <!-- taking width3 col, totalling 12 cols -->
+      <div class="col-3">
+        <div class="p-5 bg-primary text-light">col 3</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MAKING COLUMNS RESPONSIVE ON SMALLER SCREENS -->
+  <div class="container-lg my-5">
+    <h2>responsive column widths</h2>
+    <div class="row gy-3"> <!-- manually change gutter using g{d}-{n} -->
+
+      <!-- col-sm, col-md, col-lg -->
+      <!-- when screen is small, take up 4 cols, when screen is large, take up 6 cols -->
+      <!-- by doing this, default when screen is extra small, will stack and take up 12 cols -->
+      <div class="col-sm-4 col-lg-6">
+        <div class="p-5 bg-primary text-light">col 1</div>
+      </div>
+      <!-- when screen is small, take up 4 cols, when screen is large, take up 3 cols -->
+      <div class="col-sm-4 col-lg-3">
+        <div class="p-5 bg-primary text-light">col 2</div>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <div class="p-5 bg-primary text-light">col 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!--JUSTIFY CONTENT-->
+  <div class="container-lg my-5">
+    <h2>justifying columns</h2>
+    <!-- justify-content-end, justify-content-start, justify-content-between, justify-content-around -->
+    <div class="row justify-content-center">
+      <!-- col-sm, col-md, col-lg -->
+      <!-- by doing this, default when screen is extra small, will stack and take up 12 cols -->
+       <!-- when reach md break point, will conform to this rule -->
+      <div class="col-md-3">  <!-- total cols != 12, therefore we can justify -->
+        <div class="p-5 bg-primary text-light">col 1</div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-5 bg-primary text-light">col 2</div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-5 bg-primary text-light">col 3</div>
+      </div>
+    </div>
+  </div>
+
+
+
