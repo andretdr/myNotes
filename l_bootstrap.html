@@ -34,7 +34,8 @@ grid by default will stack on small screens and then default to defined col on b
 
 grid if we dont specify col for smaller screen it will use 12, full width
         
-use grids to create diff widths at diff sizes. dont use hard code numbers
+use grids to create diff widths at diff sizes. try not to use numbers.
+    For textarea maybe style='height: 140px'
         
 d-none d-lg-block
     display none, until large screen, then display this block
@@ -604,6 +605,7 @@ https://getbootstrap.com/docs/5.0/components/list-group/
         </div>
             
 
+    
 # ICONS
 ##########
 https://icons.getbootstrap.com/
@@ -612,4 +614,80 @@ https://icons.getbootstrap.com/#install
 
 // icon tag, bi bootstrap icon, alarm
     <i class="bi bi-alarm"></i>
+
+
     
+# FORMS
+##################
+
+  <!-- FORM -->
+  <form>
+    <!-- 
+    
+    SIMPLEST, you just need a label and input 
+    
+    
+    <label for="email_id" class="form-label">Email address:</label>
+    <input type="text" id="email_id" class="form-control" placeholder="e.g. mario@example.com" />
+
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" class="form-control" placeholder="e.g. Mario" />
+
+    <label for="subject" class="form-label">What is your question about?</label>
+    <select class="form-select" id="subject">
+      <option value="pricing" selected>Pricing query</option>
+      <option value="content">Content query</option>
+      <option value="other">Other query</option>
+    </select>
+
+    <label for="query" class='form-label'>Your query...</label>
+    <textarea class="form-control" id="query" style="height: 140px" placeholder="query"></textarea>
+    
+    
+    WE CAN USE INPUT GROUPS TO ADD MORE TO INPUTS
+    https://getbootstrap.com/docs/5.0/forms/input-group/
+
+    WE CAN USE FLOATING FORM FOR TEXT AREA
+    -->
+
+    <!-- label tag, class formlabel-->
+    <label for="email_id" class="form-label">Email address:</label>
+    <!-- INPUT GROUP -->
+    <div class="input-group mb-4">
+      <span class="input-group-text">
+        <!-- ICON -->
+        <i class="bi bi-envelope-fill text-secondary"></i>
+      </span>
+      <input type="text" id="email_id" class="form-control" placeholder="e.g. mario@example.com" />
+    </div>
+    <label for="name" class="form-label">Name:</label>
+    <!-- INPUT GROUP -->
+    <div class="mb-4 input-group">
+      <span class="input-group-text">
+        <!-- ICON -->
+        <i class="bi bi-person-fill text-secondary"></i>
+      </span>
+      <input type="text" id="name" class="form-control" placeholder="e.g. Mario" />
+    </div>
+    <label for="subject" class="form-label">What is your question about?</label>
+    <div class="mb-4 input-group">
+      <span class="input-group-text">
+        <i class="bi bi-chat-right-dots-fill text-secondary"></i>
+      </span>
+      <select class="form-select" id="subject">
+        <option value="pricing" selected>Pricing query</option>
+        <option value="content">Content query</option>
+        <option value="other">Other query</option>
+      </select>
+    </div>
+
+    <!-- have the label floating inside the text area  -->
+    <div class="mb-4 mt-5 form-floating">
+      <textarea class="form-control" id="query" style="height: 140px" placeholder="query"></textarea>
+      <label for="query">Your query...</label>
+    </div>
+    <div class="mb-4 text-center">
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>
+
+  </form>
