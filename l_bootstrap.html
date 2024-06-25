@@ -213,6 +213,9 @@ alt+click different spots, type
 
 # GRID
 #########
+  
+    GUTTER
+  <!-- https://getbootstrap.com/docs/5.0/layout/gutters/ -->
 
   <!-- https://getbootstrap.com/docs/5.3/layout/grid/ -->
   <!-- 12 col width system -->
@@ -303,6 +306,7 @@ alt+click different spots, type
 #####################
 
 <!-- main image & intro text -->
+<!-- Every SECTION GOES INTO A SECTION -->
   <section id="intro">
     <!-- 100% width until large screen -->
     <div class="container-lg">
@@ -329,5 +333,62 @@ alt+click different spots, type
 
 
 
-#
+# NAVBAR
 ###############################
+
+
+  <!-- navbar -->
+  <!-- https://getbootstrap.com/docs/5.0/components/navbar/ -->
+
+  <!-- HAS ITS OWN NAV TAG -->
+  <!-- CREATE AND SHOW NAVBAR ONLY AT BREAKPT MD SCREEN  -->
+  <!-- navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing and color scheme classes -->
+   <!-- navbar-dark assumes its dark so lightens text. bg-primary -->
+    <!-- fixed bottom -->
+  <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+    <!-- want it to be in a breakpoint container -->
+    <div class="container-xxl">
+      <!-- navbar brand or title/logo -->
+      <!-- href links to ID intro -->
+      <a class="navbar-brand" href="#intro">
+        <span class="text-secondary fw-bold">
+          Net Ninja Pro - the Book
+        </span>
+      </a>
+
+      <!-- navbar-toggler ATUOMATICALLY lists items alight right on at breakpoint. Before that, they go into a button -->
+           <!-- data-bs-tottle, bootstrap. data-bs-target WHICH ID to COLLAPSE. IN THIS CASE ITS BELOW -->
+           <!-- aria is for accessibility. allows screen readers to understand structure. aria expanded not expanded, aria label what this is  -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navbar links for the above navbar -->
+       <!-- has a class of collapse, similar to what above data-bs-toggle has -->
+        <!-- navbar collapse, for collapsing function -->
+         <!-- align-center is align self? -->
+          <!-- ID='MAIN-NAV', TARGETTED FROM ABOVE DATA-BS-TARGET -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#topics">About The Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Get in Touch</a>
+          </li>
+          <!-- Smaller screens display, medium screens display none. OPP of below button-->
+          <li class="nav-item d-md-none">
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </li>
+          <!-- Smaller screens display none, medium screens display inline-->
+          <li class="nav-item ms-2 d-none d-md-inline">
+            <a class="btn btn-secondary" href="#pricing">buy now</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>    
