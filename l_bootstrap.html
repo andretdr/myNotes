@@ -725,7 +725,24 @@ https://getbootstrap.com/docs/5.0/components/tooltips/
 # MODAL
 ##########
 POPUPS
+https://getbootstrap.com/docs/5.0/components/modal/
 
+You need a trigger, then the element itself
+
+    
+<section>
+    ......
+              
+          <!-- MODAL (POPUP) data-bs-toggle="modal" data-bs-target="#reg-modal" the ID of the MODAL below  -->
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+            Register for Updates
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
  <!-- modal itself aria-hidden=true means not showing by default  -->
   <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
     <!-- dialog is the white popup-->
@@ -752,3 +769,33 @@ POPUPS
   </div>
 
 
+# OFFCANVAS
+##############
+SIDEBARS
+https://getbootstrap.com/docs/5.0/components/offcanvas/
+
+You need a trigger, then the element itself
+
+
+      <!-- open sidebar / 
+       A TAG HREF TO CALL THE ID FOR SIDEBAR 
+      offcanvas -->
+
+      <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+        Explore my other books
+      </a>
+
+...
+
+  <!-- side panel / offcanvas -->
+   <!-- offcanvas-start, offcanvas-end, offcanvas-top, takes out of the tabindex,  -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebar-label">My Other Books</h5>
+      <!-- data-bs-dismiss="offcanvas" it knows to dismiss offcanvas if clicked  -->
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In minima ducimus excepturi quasi tempore fugit quis voluptatibus aut error possimus, tenetur natus magni quam voluptatem quae eligendi repudiandae delectus eaque!</p>
+    </div>
+  </div>
