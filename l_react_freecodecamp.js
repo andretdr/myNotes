@@ -355,6 +355,7 @@ class ControlledInput extends React.Component {
     return (
       <div>
         <input value={this.state.input} onChange={(e)=>this.handleChange(e)}/>
+        // updated from <input value={this.state.input} onChange={this.handleChange}/>
 
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
@@ -391,6 +392,7 @@ class MyForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input value={this.state.input} onChange={(e)=>this.handleChange(e)}/>
+          // updated from <input value={this.state.input} onChange={this.handleChange}/>
           <button type='submit'>Submit!</button>
         </form>
         <h1>{this.state.submit}</h1>
