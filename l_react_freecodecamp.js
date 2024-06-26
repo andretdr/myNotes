@@ -354,7 +354,7 @@ class ControlledInput extends React.Component {
   render() {
     return (
       <div>
-        <input value={this.state.input} onChange={this.handleChange}/>
+        <input value={this.state.input} onChange={(e)=>this.handleChange(e)}/>
 
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
@@ -390,7 +390,7 @@ class MyForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input value={this.state.input} onChange={this.handleChange}/>
+          <input value={this.state.input} onChange={(e)=>this.handleChange(e)}/>
           <button type='submit'>Submit!</button>
         </form>
         <h1>{this.state.submit}</h1>
@@ -469,7 +469,7 @@ class GetInput extends React.Component {
         <input
 // passing these values down from parent
           value={this.props.input}
-          onChange={this.props.handleChange}/>
+          onChange={(e)=>this.props.handleChange(e)}/>
       </div>
     );}
 };
