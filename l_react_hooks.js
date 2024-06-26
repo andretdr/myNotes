@@ -122,6 +122,10 @@ useEffect(() => { fetchDate() return cleanUp()}, [])
 //////////////////////////////
 // having a seperate 'context' which stores global state that can be accessed by anyone from anywhere without using props
 
+// this one does it without external file
+// https://www.youtube.com/watch?v=5ianRgE5ByU
+
+
 // typically have a context folder w Context.j n ContextProvider.js
 
 /// Context.js 
