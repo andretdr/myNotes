@@ -355,7 +355,7 @@ class ControlledInput extends React.Component {
     return (
       <div>
         <input value={this.state.input} onChange={(e)=>this.handleChange(e)}/>
-        // updated from <input value={this.state.input} onChange={this.handleChange}/>
+        // updated from <input value={this.state.input} onChange={this.handleChange}/> BOTH CAN WORK
 
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
