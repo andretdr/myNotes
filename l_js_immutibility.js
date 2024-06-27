@@ -31,6 +31,13 @@ const store = Redux.createStore(immutableReducer);
 JS SPREAD ... https://www.w3schools.com/react/react_es6_spread.asp
 ===============================
 
+  // COMBINING ARRAYS, create new
+  const numbersOne = [1, 2, 3];
+  const numbersTwo = 5;
+  const numbersCombined = [...numbersOne, numbersTwo];
+  
+  [1,2,3,5]
+  
   const immutableReducer = (state = ['Do not mutate state!'], action) => {
     switch(action.type) {
       case 'ADD_TO_DO':
