@@ -1,5 +1,17 @@
 // https://www.youtube.com/watch?v=sa-TUpSx1JA
 
+# JS STRING
+#################
+string.search(/regex/)
+returns index of 1st match or -1
+
+string.match(/regex/)
+returns an array of matches, or null
+
+let pattern = /regex/
+pattern.test(str)
+returns true if match, or false
+
 # regex = /asd/
 ####################
 
