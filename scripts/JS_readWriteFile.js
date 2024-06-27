@@ -1,3 +1,6 @@
+// Might need to polyfill if doing with vite
+// https://stackoverflow.com/questions/75220242/how-to-polyfill-node-core-modules-using-vite
+
 // https://www.npmjs.com/package/n-readlines
 // npm i n-readlines
 
@@ -50,21 +53,5 @@ fs.writeFile('./markdowntext.js', str, err => {
     console.error('done');
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 console.log(str);
