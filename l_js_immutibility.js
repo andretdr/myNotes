@@ -49,7 +49,8 @@ JS SPREAD ... https://www.w3schools.com/react/react_es6_spread.asp
   const store = Redux.createStore(immutableReducer);
 
 =======================================
-
+  SLICE
+=======================================
 // REMOVE ITEM INDEX FROM ARRAY USING SLICE
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
@@ -84,7 +85,6 @@ const person2 = {firstName: "Anne",lastName: "Smith"};
 // {} is important to create new object and not modify old one
 const newObj = Object.assign({}, person1, person2);
 
-=======================
   // example
   
 const defaultState = {user: 'CamperBot', status: 'offline', friends: '732,982', community: 'freeCodeCamp'};
