@@ -62,6 +62,10 @@ export default function Counter() {
 
 // USESTATE HOOK
 ////////////////////////////////
+// Concurrency Issue
+// https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state
+////////////////////////////////
+
 
 // import the useState hook
 import { useState } from 'react'
