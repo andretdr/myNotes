@@ -1,0 +1,500 @@
+
+<!--
+HTML
+
+tags
+attributes
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            headings
+        </title>
+    </head>
+    <body>
+        <h1>
+            One
+        </h1>
+        <p>
+            hello, body
+        </p>
+        <h2>
+            Two
+        </h2>
+        <p>
+            1st paragraph
+        </p>
+        <h3>
+            Three
+        </h3>
+        <p>
+            2nd paragraph
+        </p>
+
+        <ul> <!-- unordered list tag -->
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+        </ul>
+
+        <ol> <!-- ordered list tag // numbered -->
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+        </ol>
+
+        <table>
+            <tr> <!-- table row -->
+                <td>1</td> <!-- table data -->
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr> <!-- table row -->
+                <td>4</td> <!-- table data -->
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr> <!-- table row -->
+                <td>7</td> <!-- table data -->
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <img alt="photo of bridge" src="bridge.png"> <!-- alt text before image loads -->
+
+        <video controls muted> <!-- video controls -->
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <p>
+            Visit <a href="https://www.harvard.edu/">Harvard</a> <!-- anchor tag, hyper ref attribute -->
+        </p>
+
+    </body>
+</html>
+
+<!--
+    http-server
+-->
+
+
+<!-- meta -->
+<html  lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>meta</title>
+    </head>
+</html>
+
+<html  lang="en">
+    <head>
+        <meta property="og:title" content="CS50"> <!-- copy paste a link, thumbnail -->
+        <meta property="og:description" content="Introduction etc etc">
+        <meta property="og:image" content="cat.jpg">
+        <title>meta</title>
+    </head>
+</html>
+
+
+<!-- search -->
+<html  lang="en">
+    <head>
+        <title>search</title>
+    </head>
+    <body>
+        <form action="https://www.google.com/search" method="get">
+            <input autocomplete="off" autofocus name="q" placeholder="Query" type="search"> <!-- standard google ?q=dog -->
+            <button>Search</button>
+        </form>
+
+    </body>
+</html>
+
+<!-- standard way of sending info from browser to server querying-->
+https://wwww.example.com/path?key=value&key=value
+<!-- google's standard way of searching is ?q=cats -->
+www.google.com/search?q=cats
+
+
+
+<!-- REGEX
+. any single character
+* zero or more times
++ one or more times
+? 0 or 1 time
+{n} n occurrences
+{n,m} n to m occurrences
+[012345] any one of the enclosed char
+[0-9] range of chars
+\d any digit
+\D character that is not a digit
+-->
+<html  lang="en">
+    <head>
+        <title>search</title>
+    </head>
+    <body>
+        <form>
+            <!-- use regex to filter patterns-->
+            <input autocomplete="off" autofocus name="email" pattern=".+@.+\.edu" placeholder="Email" type="email">
+            <button>Register</button>
+        </form>
+    </body>
+</html>
+
+<!-- validator.w3.org
+to syntactically check yr http -->
+
+
+<!-- CSS
+
+type selector  document.querySelector('name')
+class selector document.querySelector('.name')
+ID selector    document.querySelector('#name')
+
+decaring
+class="name"
+.name {
+
+}
+
+type
+h1 {
+
+}
+
+id="name"
+#name {
+
+}
+
+
+attribute selector
+
+in html
+<style></style>
+
+css
+<link href="styles.css" rel="stylesheet"> #relegate the style to a css file
+-->
+
+<html lang="en">
+    <head>
+        <title>home</title>
+    </head>
+    <body style="text-align: centre"> <!-- putting the text align style here, effect cascades downward-->
+        <div style="font-size: large"> <!--property is key value pair -->
+            Harvard
+        </div> <!-- divisions of the page -->
+        <div style="font-size: medium">
+            Welcome home
+        </div>
+        <div style="font-size: small">
+            Copyright &#169; <!-- code for the html entity-->
+        </div>
+    </body>
+</html>
+
+<!--improvement seperating style w data-->
+<head> <!-- style tag -->
+    <style>
+
+        .centered <!-- creating your own class style. call it any name, prefix with . -->
+        {
+            text-align: centre;
+        }
+
+        .large
+        {
+            font-size: large;
+        }
+
+        .medium
+        {
+            font-size: medium;
+        }
+
+        .small
+        {
+            font-size: small;
+        }
+
+    </style>
+    <title>home</title>
+</head>
+<body class="centred"> <!-- using the classes from above -->
+    <header class="large"> <!--sementic tags just for readability -->
+        Harvard
+    </header>
+    <main class="medium">
+        Welcome home
+    </main>
+    <footer class="small">
+        Copyright &#169;
+    </footer>
+</body>
+</html>
+
+<!-- improving more, creating your .css -->
+
+<head> <!-- style tag -->
+    <link href="syntax.css" rel="stylesheet"> <!-- using the link to the .css style file -->
+    <title>home</title>
+</head>
+<body class="centred"> <!-- using the classes from above -->
+    <header class="large"> <!--sementic tags just for readability -->
+        Harvard
+    </header>
+    <main class="medium">
+        Welcome home
+    </main>
+    <footer class="small">
+        Copyright &#169;
+    </footer>
+</body>
+</html>
+
+<!-- another example html -->
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <style>
+
+            #harvard // # is unique id, created below . is class
+            {
+                color: red;
+            }
+
+            #yale <!-- unique id created below-->
+            {
+                color: blue;
+            }
+
+            a <!-- represents the literal name of the tag -->
+            {
+                color: red;
+                text-decoration: none; <!-- default is underline-->
+            }
+
+            a:hover
+            {
+                text-decoration: underline; <!-- underline when mouse hover -->
+            }
+
+        </style>
+
+        <title>link</title>
+    </head>
+    <body>
+            Visit <a href="https://www.harvard.edu/" id="harvard">Harvard</a> <!-- create unique id. can be any thing-->
+            or <a href="https://www.yale.edu/" id="yale">Yale</a>.
+    </body>
+
+</html>
+
+
+
+<!-- bootstrap example -->
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="..">
+
+        <title>link</title>
+    </head>
+    <body>
+            Visit <a href="https://www.harvard.edu/" id="harvard">Harvard</a> <!-- create unique id. can be any thing-->
+            or <a href="https://www.yale.edu/" id="yale">Yale</a>.
+    </body>
+
+</html>
+
+
+
+<!-- javascript -->
+
+<html lang="en">
+    <head> <!-- can insert a style tag AND a script tag, javascript-->
+        <script>
+
+            function greet()
+            {
+                alert('hello,' + document.querySelector('#name').value); <!-- select any tag in this html document, so here select the unique #name ID's value-->
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;"> <!-- return false means dont submit to server. some javasript here -->
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+        </form>
+    </body>
+
+</html>
+
+<!-- javascript example 2 -->
+
+<html lang="en">
+    <head>
+    </head>
+    <body> <!-- different way to do same thing, but seperate the script from the html more. More common -->
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+            <input type="submit">
+        </form>
+        <script> <!-- select from this document, the form, use method add listener to listen for submit, you will call the function(event) alert(...)-->
+            document.querySelector('form').addEventListener('submit', function(event) {
+                alert('hello, ' + document.querySelector('#name').value);
+                event.preventDefault(); <!-- dont submit to server, keep user here -->
+            });
+        </script>
+
+
+    </body>
+
+</html>
+
+<!-- javascript example 3 DOMContentLoaded-->
+
+<html lang="en">
+    <head>
+    </head>
+    <body> <!-- different way to do same thing, but seperate the script from the html more. More common -->
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name"> <!-- given the input the unique #name ID -->
+            <input type="submit">
+        </form>
+        <script> <!-- DOM document object model -->
+            document.addEventListener('DOMContentLoaded', function() { <!-- wait for all content to be pulled in and loaded first, then call the function() {...}-->
+                document.querySelector('form').addEventListener('submit', function(event) { <!-- select from this document, the form, use method add listener to listen for submit, you will call the function(event) alert(...)-->
+                    alert('hello, ' + document.querySelector('#name').value);
+                    event.preventDefault(); <!-- dont submit to server, keep user here -->
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>
+
+<!-- javascript example 4 color buttons-->
+
+<html lang="en">
+    <head>
+        <title>Color</title>
+    </head>
+    <body>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+
+        <script>
+
+            let body = document.querySelector('body'); <!-- select this tag-->
+            document.querySelector('#red').addEventListener('click', function(){
+                body.style.backgroundColor = 'red';
+            });
+            document.querySelector('#green').addEventListener('click', function(){
+                body.style.backgroundColor = 'green';
+            });
+            document.querySelector('#blue').addEventListener('click', function(){
+                body.style.backgroundColor = 'blue';
+            });
+            document.querySelector
+        </script>
+
+
+    </body>
+
+</html>
+
+
+<!-- javascript example 5 blink -->
+
+<html lang="en">
+    <head>
+        <script>
+
+            function blink()
+            {
+                let body = document.querySelector('body');
+                if (body.style.visibility == 'hidden')
+                {
+                    body.style.visibility = 'visible';
+                }
+                else
+                {
+                    body.style.visibility = 'hidden';
+                }
+            }
+
+            // blink every 500 ms
+            windows.setInterval(blink, 500); // not calling the blink function, just informing setInterval of the name of the function
+        </script>
+    </head>
+
+    <body>
+        <p>
+            hello, world
+        </p>
+    </body>
+
+</html>
+
+<!-- javascript example Adding html code dynamically -->
+
+<html>
+...
+
+    <body>
+        ...
+
+        <input autocomplete="off" autofocus placeholder="Query" type="text">
+        <ul></ul>
+
+        <script src="large.js"></script>
+        <script>
+
+            let input = document.querySelector('input'); // use query selector function to get the input textbox
+            input.addEventListener('keyup', function(event) {  // add a listener to the input for event keyup
+                let html = ''; // when it hears the event it will do the following. initiate html variable.
+                if (input.value) { // if the input has a value
+                    for (word of WORDS) { //similar to for loop, words IN WORDS}
+                        if (word.startsWith(input.value)){ // if the word starts with
+                            html += `<li>${word}</li>`; // add or concatonate to html variable, the tag <li>, the word, and close tag </li>
+                        }
+                    }
+                }
+                document.querySelector('ul').innerHTML = html; // adding the new html into the ul tag of this html, adding to the inner html
+            });
+        </script>
+    </body>
+</html>
+
+<!-- large.js
+    javascript arrays = [] like python lists
+-->
+
+
+<!-- javascript example Geolocation -->
+
+<html lang="en">
+    <head>
+        <title>geolocation</title>
+    </head>
+    <body>
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.write(posiition.coords.latitude + ", " + position.coords.longitude);
+            });
+
+        </script>
+    </body>
+</html>
