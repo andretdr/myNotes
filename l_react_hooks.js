@@ -133,35 +133,11 @@ useEffect(() => { fetchDate() return cleanUp()}, [])
 // typically have a context folder w Context.j n ContextProvider.js
 
 /// Context.js 
-// initialise state
+// initialise state PREFERED SOLUTION
 import { createContext } from 'react'
 // createContext with initial state null
-const Context = createContext(null)
+const Context = createContext()
 export default Context
-
-// ALT SOLUTION
-import { User } from '../useContext'
-const Context = createContext<User | undefined>(undefined); // of type User or undefined
-export default Context
-
-    // creating custom hook to resolve undefined error
-export function useUserContext() {
-    const user = useContext(Context);
-    if (user === undefined) {
-        throw new Error('User must be provided')
-    }
-    // now we know we confirm will always only have value user and not undefined
-    return user;
-}
-
-
-// component where User state is from
-
-export interface User {
-    isSubscribed: boolean;
-    name: string;
-}
-
 
 
 // contextProvider is a high order component. Component that returns a component
@@ -169,6 +145,7 @@ export interface User {
 import { useState } from 'react'
 import Context from './Context'
 
+// Can remove the {{children}}
 const ContextProvider = ({children}) => {
     // var and setFunction pairs
     const [darkModeOn, setDarkModeOn] = useState(true)
@@ -186,28 +163,7 @@ const ContextProvider = ({children}) => {
     )
 }
 
-/* ALT solution
-    return (
-        <Context.Provider value={User} >
-            {children}
-        </Context.Provider>
-    )
-*/
 
-
-
-export default ContextProvider
-
-// In app.js, we wrap all the components we want to interact w contextProvider.
-import ContextProvider from './context/ContextProvider'
-
-export default function App() {
-  return (
-    <ContextProvider>
-        <App />
-    </ContextProvider>
-  )
-}
 
 // In our components that need to react, we do
 import { useContext, useState } from 'react'
