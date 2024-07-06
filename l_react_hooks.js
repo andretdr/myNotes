@@ -246,13 +246,6 @@ function App() {
 export default App
 
 
-// useCALLBACK
-
-
-
-
-
-
 // USEREF HOOK
 //////////////////////////////
 
@@ -276,3 +269,26 @@ function LogButtonClicks() {
     
     return <button onClick={handle}>Click me</button>;
 }
+
+
+
+// MEMOIZATION
+/////////////////////////////
+
+
+const MyComponent = React.memo(({name}) => {
+    return ....
+}
+
+will not re-render UNLESS name changes. if not, will not render
+
+
+
+// useCALLBACK
+/////////////////////
+//  used for functions
+
+// functions will also re-render each time. If dont want function to re-render, use call back
+const handleIncrement = useCallback(() => {
+    .....
+}, []);
