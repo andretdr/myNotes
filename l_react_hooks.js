@@ -77,7 +77,11 @@ import { useState } from 'react'
 const [count, setCount] = useState(0) // 0 is the default for the state count
 // once state is updated, will cause rerender of component.
 
+// SETSTATE WITH CALLBACK
+// https://dev.to/csituma/when-do-you-use-setstate-with-a-callback-1f3g
 
+
+    
 // USEEFFECT HOOK
 ///////////////////////////////
 // https://www.youtube.com/watch?v=-4XpG5_Lj_o&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=2
