@@ -214,3 +214,89 @@ const myDog = new Dog("Buddy", "Labrador");
 console.log(myDog.name); // Output: Buddy
 myDog.makeSound(); // Output: Woof! Woof!
 
+//////////////////////
+// INTERFACE
+//////////////////////
+// Defines structure that classes can implement. It specifies a set of properties and methods that a class must have
+// Interfaces only declare the structure (properties and method signatures) without providing any implementation details
+// abstract classes can have implementation - interface cannot. SOLELY for structure n types
+
+interface InterfaceName {
+  property1: type;
+  property2: type;
+  method1(): returnType;
+  method2(param: type): returnType;
+}
+
+class ClassName implements InterfaceName {
+  // Implementation of interface properties and methods
+}
+
+// another
+
+interface Shape {
+  calculateArea(): number;
+}
+
+class Circle implements Shape {
+  radius: number;
+
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+
+  calculateArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+class Rectangle implements Shape {
+  width: number;
+  height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  calculateArea(): number {
+    return this.width * this.height;
+  }
+}
+
+
+function printArea(shape: Shape) {
+  console.log(`Area: ${shape.calculateArea()}`);
+}
+
+printArea(circle); // Output: Area: 78.53981633974483
+printArea(rectangle); // Output: Area: 24
+
+///////////////////
+// TYPE GUARD
+// INSTANCEOF
+///////////////////
+// Check if object is instanceof className
+
+if (object instanceof ClassName) {
+  // TypeScript knows that 'object' is an instance of ClassName here
+}
+
+function makeSound(animal: Animal) {
+  if (animal instanceof Dog) {
+    // TypeScript knows 'animal' is a Dog here
+    animal.bark(); // OK
+  } else if (animal instanceof Cat) {
+    // TypeScript knows 'animal' is a Cat here
+    animal.meow(); // OK
+  } else {
+    // TypeScript knows 'animal' is just an Animal here
+    animal.move(); // OK
+  }
+}
+
+const myDog = new Dog();
+const myCat = new Cat();
+
+makeSound(myDog); // Output: Woof!
+makeSound(myCat); // Output: Meow!
