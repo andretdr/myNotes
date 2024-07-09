@@ -1,3 +1,12 @@
+// Deep dive
+https://www.typescriptlang.org/docs/handbook/2/generics.html
+https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
+https://www.typescriptlang.org/docs/handbook/2/typeof-types.html
+https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html
+https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
+https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
+https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
+
 // Type System
 // primitives
 
