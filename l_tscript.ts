@@ -218,3 +218,105 @@ let c: Color = Color.Green;
 
 // never
 
+
+/////////////////////////////////
+// Implicit vs Explicit Typing
+/////////////////////////////////
+
+// Implicit, like JS, you let ts infer
+// Not reccomended
+let userName = "dollar_bill";  // TypeScript infers type string
+let userAge = 25;           // TypeScript infers type number
+
+
+/////////////////////////////////////
+// Type Guard, TYPE CHECKS
+/////////////////////////////////////
+
+// typeof, for primitive types
+
+function logMessage(value: string | number): void {
+  if (typeof value === "string") {
+    console.log('its a string');
+  } else {
+    console.log('its a number');
+  }
+}
+
+// RECCOMENDED
+///////////////////////////
+// custom typeguard
+// use IS, IN
+
+// is number? if so return true
+function isNumber(value: any): value is number {
+  return typeof value === "number";
+}
+
+function multiplyByTwo(value: number | string): number {
+  if (isNumber(value)) {
+	  // TypeScript knows that 'value' is a number here
+    return value * 2;
+  } else {
+    return 0;
+  }
+}
+
+///////////////////////////////
+// use IN
+
+// another example
+type Book = {
+  title: string;
+  author: string;
+  pages: number;
+}
+
+type Movie = {
+  title: string;
+  director: string;
+  duration: number;
+}
+
+function isBook(media: Book | Movie): media is Book {
+  return 'author' in media && 'pages' in media;
+}
+
+//////////////////////////
+// TYPE ASSEERTIONS
+//////////////////////////
+// use AS
+(someValue as string)
+
+let someValue: any = "Hello, TypeScript!";
+someValue as string;
+let strLength: number = (someValue).length;
+
+// Usually from JSON has type any. We have to assert
+
+// Example with JSON data
+let jsonString = '{"name": "John", "age": 30}';
+let person: any = JSON.parse(jsonString);
+
+// Type assertion to tell TypeScript it's a specific type
+let personDetails = person as { name: string, age: number };
+
+console.log(`Name: ${personDetails.name}, Age: ${personDetails.age}`);
+
+// Another Example
+type User = {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const userData: unknown = JSON.parse('{"id": 1, "name": "John Doe", "email": "john@example.com"}');
+const user: User = userData as User; // Modify only this line to fix the error
+console.log(user.name); // Should print: John Doe
+
+// caution. Do the checks yrself before asserting
+
+/////////////////////
+// ALT syntax for assertion
+let someValue: any = "Hello, TypeScript!";
+let strLength: number = (<string>someValue).length;
