@@ -25,6 +25,29 @@ in the package.json file
 run npm test to run using mocha cmd
 // https://mochajs.org/
 
+
+/////////////////////////
+// typescript
+
+npm install typescript --save-dev
+
+// to run
+npx tsc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////
 // SETTING UP VITE PROJECT AUTOMATICALLY W NPM
 ////////////////////////////////////////
