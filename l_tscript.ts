@@ -320,3 +320,4 @@ console.log(user.name); // Should print: John Doe
 // ALT syntax for assertion
 let someValue: any = "Hello, TypeScript!";
 let strLength: number = (<string>someValue).length;
+
