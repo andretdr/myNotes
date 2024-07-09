@@ -271,9 +271,6 @@ function multiplyByTwo(value: number | string): number {
   }
 }
 
-///////////////////////////////
-// use IN
-
 // another example
 type Book = {
   title: string;
@@ -329,4 +326,37 @@ console.log(user.name); // Should print: John Doe
 // ALT syntax for assertion
 let someValue: any = "Hello, TypeScript!";
 let strLength: number = (<string>someValue).length;
+
+
+
+///////////////////
+// INDEXING
+///////////////////
+// you want to do obj[index] but it isnt that easy...........
+///////////////////////////////////
+// HERE. SE200, assignment 1 Qn5
+	
+/** returns next object given the index and object */
+  const getNext = (index: string, currPointer: any):any => {
+      return (
+          // checks if index is a key in currPointer 
+          (index in currPointer)
+          // returns next object if true
+          ? currPointer[index as keyof typeof currPointer]
+          // returns undefined if not
+          : undefined
+      )
+  }
+
+  for (let index of keyArray){
+        // you want to do obj = obj[index] but it isnt that easy...........
+	// instead do this
+  	obj = getNext(index, obj);
+  }
+  return currPointer;
+
+}
+
+
+
 
