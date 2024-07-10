@@ -6,3 +6,12 @@ python -m venv venv
 
 
 flask run
+
+
+// running uvicorn
+main.py
+..
+app = FastAPI()
+..
+// main is the file name, app is the app instance, reload means reload app whenever got change
+uvicorn main:app --reload
