@@ -26,6 +26,12 @@ run npm test to run using mocha cmd
 // https://mochajs.org/
 
 
+/////////////////////////////////
+npm uninstall <package-name>
+
+// global
+npm uninstall -g <package-name>
+
 /////////////////////////
 // typescript
 
