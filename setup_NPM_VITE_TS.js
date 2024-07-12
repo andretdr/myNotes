@@ -35,19 +35,6 @@ npm install typescript --save-dev
 npx tsc
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////////
 // SETTING UP VITE PROJECT AUTOMATICALLY W NPM
 ////////////////////////////////////////
