@@ -252,10 +252,16 @@ export default App
 
 // USEREF HOOK
 //////////////////////////////
+// USE REF IS USED FOR VALUES THAT DO NOT TRIGGER RERENDER. 
+// HENCE THEY DONT SUFFER ASYNCHRONOUS ISSUES LIKE USESTATE STATES.
+// THEY DISPLAY CORRECT VALUE AT ALL TIMES
+
 
 const ref = useRef(initialValue)
 ref.current is ref value,
 ref.current = newValue updates ref value
+ref.current++
+ref.current = ref.current + 5
 
 // udating ref doesnt trigger re-render
 
