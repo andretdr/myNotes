@@ -282,6 +282,33 @@ function LogButtonClicks() {
     return <button onClick={handle}>Click me</button>;
 }
 
+// Another usecase for USEREF
+///////////////////////////////////
+
+const Component = ()=>{
+    // initialise inputRef as either type HTMLInputElement or null, set it to null
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+    useEffect(()=>{
+        // onMOUNT,
+        // is current value of inputref not null? if its not null (means its a HTML input element) then focus();
+        inputRef.current?.focus();
+    },[]);
+
+    return (
+        <div>
+            // ONLY case where you can add useRef to the return
+            // this inputElement will be added to the inputRef.current onMount
+            <input ref={inputRef} type='text' placeHolder .....>
+        </div>
+
+        
+    );}
+    
+}
+
+
+
 
 
 // MEMOIZATION
