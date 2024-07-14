@@ -255,6 +255,7 @@ export default App
 // USE REF IS USED FOR VALUES THAT DO NOT TRIGGER RERENDER. 
 // HENCE THEY DONT SUFFER ASYNCHRONOUS ISSUES LIKE USESTATE STATES.
 // THEY DISPLAY CORRECT VALUE AT ALL TIMES
+// DOes not trigger re-render even when called in the return
 
 
 const ref = useRef(initialValue)
