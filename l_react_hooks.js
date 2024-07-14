@@ -284,6 +284,7 @@ function LogButtonClicks() {
 
 // Another usecase for USEREF
 ///////////////////////////////////
+// FOR ACCESSING HTML DOM ELEMENTS
 
 const Component = ()=>{
     // initialise inputRef as either type HTMLInputElement or null, set it to null
