@@ -36,3 +36,44 @@ async function getAPI(){
     	catch(err){
 		setError(err);        	
     	}
+
+
+///////////////////////////
+// BLOB and BLOB URL
+///////////////////////////
+// https://www.youtube.com/watch?v=WqBs_msUOXY&t=18s
+
+const data = 'some data';
+
+// create a blob (binary large obj)
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+// text/plain is the default value for textual files. A textual file should be human-readable and must not contain binary data.
+// application/octet-stream is the default value for all other cases. An unknown file type should use this type. Browsers are particularly careful when manipulating these files to protect users from software vulnerabilities and possible dangerous behavior.
+
+const blob = new Blob([data], { type: 'text/plain' });
+
+// Create URL for data blob
+const url = URL.createObjectURL(blob);
+
+// Now its a 'url', user can download it, access it etc
+a.href = url;
+a.download = 'blob.txt';
+
+
+// ANother example
+
+// create URL
+const url = URL.createObjectURL(imgObj);
+
+// set as new image src
+// show the imgObj on the HTML
+const img = new Image();
+img.src = url;
+img.onload = () => {
+	document.body.appendChild(img);
+}
+
+
+}
+
+
