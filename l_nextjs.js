@@ -51,3 +51,10 @@ tsconfig.json
 import Link from 'next/link'
   
 <Link href="/lesson2/execercise3">Excercise3</Link>
+
+
+// Dynamic routes
+
+// Route pages
+
+// Go read the heicoders document
