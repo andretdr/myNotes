@@ -59,6 +59,9 @@ const url = URL.createObjectURL(blob);
 a.href = url;
 a.download = 'blob.txt';
 
+// Good practice to release blob after you are done
+URL.revokeObjectURL(url);
+
 
 // ANother example
 
@@ -73,7 +76,9 @@ img.onload = () => {
 	document.body.appendChild(img);
 }
 
+// Good practice to release blob after you are done
+URL.revokeObjectURL(url);
 
-}
+
 
 
