@@ -53,8 +53,55 @@ import Link from 'next/link'
 <Link href="/lesson2/execercise3">Excercise3</Link>
 
 
-// Dynamic routes
+////////////////////
+// Dynamic ROutes
+// AND dynamic ids
 
-// Route pages
+app/posts/[id]/
 
-// Go read the heicoders document
+// all [id] will share the page.tsx
+
+export default function Page(input) {
+  return <div>Post ID: input.params.id</div>
+}
+
+// OR
+export default function Page({ params }) {
+  return <div>Post ID: {params.id}</div>
+}
+
+
+
+//////////////////////
+// Metadata
+
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Heicoders',
+  description: 'This is the description that will be read on searches like Google search.',
+}
+
+/////////////////////
+// Dynamic Metadata
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+
+import type { Metadata } from 'next'
+ 
+type Props = {
+  params: { id: string }
+}
+ 
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  // read route params
+  const id = params.id
+ 
+  return {
+    title: id
+  }
+}
+
+
+
