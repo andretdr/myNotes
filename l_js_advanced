@@ -38,6 +38,15 @@ async function getAPI(){
     	}
 
 
+//////////////////////////////
+// EVENT LISTENER RUN ONCE AND REMOVE SELF
+//////////////////////////////
+element.addEventListener('eventname', () => {
+    console.log("event is captured only once.");
+    ......
+  }, { once: true });
+
+
 ///////////////////////////
 // BLOB and BLOB URL
 ///////////////////////////
