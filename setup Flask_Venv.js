@@ -13,7 +13,11 @@ python -m venv venv
 deactivate
 .\venv\Scripts\activate
 
+////////////////////////////////
+// autocreate requirements.txt
+////////////////////////////////
 
+pip freeze > requirements.txt
 
 
 flask run
