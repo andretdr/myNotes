@@ -109,16 +109,17 @@ export async function generateMetadata(
 // https://www.youtube.com/watch?v=If5LI88_aY8
 
 // global.css affects ALL pages
-body{
+.myheight{
   background-color: 'black';
   color: 'white';
 }
 
+<div className='myheight'>
 
 // local to each page
 import styles from "./about.module.css"
 
-<div className='{styles.input}'>
+<div className={`container-fluid ${styles.input}`}>
 ...
 
 about.module.css
