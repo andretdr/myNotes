@@ -104,4 +104,25 @@ export async function generateMetadata(
 }
 
 
+///////////////////
+// STYLES, CSS
+// https://www.youtube.com/watch?v=If5LI88_aY8
+
+// global.css affects ALL pages
+body{
+  background-color: 'black';
+  color: 'white';
+}
+
+
+// local to each page
+import styles from "./about.module.css"
+
+<div className='{styles.input}'>
+...
+
+about.module.css
+.input{
+  ......
+}
 
