@@ -47,6 +47,14 @@ element.addEventListener('eventname', () => {
   }, { once: true });
 
 
+//////////////////////////////////
+// SPLIT string into array using regex
+//////////////////////////////////
+
+const array = date.split(/[-T:]/)
+
+
+
 ///////////////////////////
 // BLOB and BLOB URL
 ///////////////////////////
