@@ -70,6 +70,9 @@ em is about 16px
     </defs>
   </svg>
 
+// <circle cx="150" cy="150" r="50" />
+// <rect x="150" y="150" width="100" height="100" />
+    
 
   // the css class that uses it
 .image{
