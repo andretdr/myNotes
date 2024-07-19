@@ -36,7 +36,9 @@ em is about 16px
 
 
 // clip path
+/////////////////////
 // https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+
 <div className='shape'>
 
 .shape{
@@ -52,6 +54,36 @@ em is about 16px
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vh), 0 100%)
 }
 
+// ADVANCED CLIP PATH
+// combining clip-paths
+/////////////////////////////
+
+
+  // defined yr clip paths in html
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="myClip">
+        <polygon points="400,50 400,320, 140,300"/>
+        <polygon points="450,10 500,200 600,100" />
+        <polygon points="150,10 100,200 300,100" />
+      </clipPath>
+    </defs>
+  </svg>
+
+
+  // the css class that uses it
+.image{
+  clip-path:url(#myClip);
+}
+
+
+// and the element that uses the class
+  <div className='image'>
+
+
+
+
+    
 
 ///////////////////////////////////////////////
 // Before and After
