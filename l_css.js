@@ -1,6 +1,17 @@
+////////////////////////
+// tips and tricks
+////////////////////////
+
+width: max-content;
+
+whitespace : nowrap
+// https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+
+
+///////////////////////////////////////////////////
 // https://www.youtube.com/watch?v=_-aDOAMmDHI
 // em vs rem
-
+///////////////////////////////////////////////////
 em is about 16px
 
 // fonts
@@ -16,3 +27,35 @@ em is about 16px
 
 // rem for margins and paddings looks towards the ROOT level's font size
 
+
+
+///////////////////////////////////////////////////////
+// CSS SHAPES
+///////////////////////////////////////////////////////
+// https://www.youtube.com/watch?v=QY7Rj8aZcZk
+
+
+// clip path
+<div className='shape'>
+
+.shape{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+}
+
+// dynamic
+.shape{
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vh), 0 100%)
+}
+
+
+///////////////////////////////////////////////
+// Before and After
+///////////////////////////////////////////////
+// https://www.youtube.com/watch?v=xoRbkm8XgfQ
+  
+::before
+::after
+
+// dont work on images
+
+// they happen before and after CONTENT, not the div
