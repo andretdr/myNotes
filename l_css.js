@@ -80,8 +80,17 @@ em is about 16px
 // and the element that uses the class
   <div className='image'>
 
+//https://css-tricks.com/almanac/properties/c/clip-path/
+//////////////////////////////////////////////////////////////
+    
+clip-path: circle(30px at 35px 35px);
+
+/* ellipse */
+clip-path: ellipse(65px 30px at 125px 40px);
 
 
+/* rounded corners... not sure if a thing anymore */
+clip-path: inset(10% 10% 10% 10% round 20%, 20%);
 
     
 
