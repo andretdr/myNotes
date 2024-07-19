@@ -40,6 +40,10 @@ em is about 16px
 <div className='shape'>
 
 .shape{
+  clip-path: circle(50px at 0 50%) // x y from top left corner, 0 from left, 50% from top
+}
+  
+.shape{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 }
 
