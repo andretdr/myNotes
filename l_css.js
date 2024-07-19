@@ -4,7 +4,7 @@
 
 width: max-content;
 
-whitespace : nowrap
+whitespace : nowrap;
 // https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
 
 
@@ -36,6 +36,7 @@ em is about 16px
 
 
 // clip path
+// https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
 <div className='shape'>
 
 .shape{
