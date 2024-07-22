@@ -49,6 +49,9 @@ export default function Counter() {
     const handleIncrement = () => setCount(count+1) // here we set how we want to change the state
     const handleDecrement = () => setCount(count-1)
 
+    // USE CALLBACK
+    const handleDecrement = () => setCount(count=>{count-1})
+
     return (
         <div className="App">
             <button onClick={() => handleIncrement()}>Increment</button>
