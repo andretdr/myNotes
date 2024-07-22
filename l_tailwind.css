@@ -1,0 +1,58 @@
+// TAILWIND
+////////////////
+
+ classes define the rules, like bootstrap
+ https://tailwindcss.com/
+ 
+// INSTALL
+//////////////
+
+// when you create nextjs proj, you are asked to use tailwind or not
+
+// create a tailwind.config.js
+// to handle customisation
+
+// playground
+// https://play.tailwindcss.com/
+
+ you will still have a CSS file
+ for all tailwind css, have this in the global css file
+
+/*  adds all the default styles */
+@tailwind base;
+/*  .. */
+@tailwind components;
+/*  all the utility classes. the mapping from tailwind class names to the vanilla css rules */
+@tailwind utilities;
+
+
+// elements
+//////////////////////
+
+// bg
+// BACKGROUND
+
+// py
+// PADDING FOR Y-AXIS
+
+// px
+// PADDING FOR X-Axis
+
+// ml
+// margin left
+
+// rounded
+// rounded corners
+
+// hover: bg-blue-400
+// set background to blue-400 on hover
+
+// transition duration-400
+// animation
+
+
+// SPACING
+// https://tailwindcss.com/docs/customizing-spacing
+
+
+
