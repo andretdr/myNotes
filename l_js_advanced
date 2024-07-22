@@ -18,7 +18,7 @@ fetch('https://v6.exchangerate-api.com/v6/5c2aae274290b9a672b18c92/pair/AUD/SGD'
 
 // USING AWAIT, ASYNC
 /////////////////////
-async function getAPI(){
+async function getAPI(url: string): Promise<any> { // type of promise
 	...
         
 	try{
