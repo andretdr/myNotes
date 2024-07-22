@@ -127,3 +127,36 @@ about.module.css
   ......
 }
 
+
+
+
+
+///////////////////////
+// Image Component
+// dont use <img> anymore
+
+<Image 
+  src='..'
+  width={}
+  height={}
+  alt=''
+  />
+  
+- optimizes img loading automatically webp avif
+
+
+
+
+////////////////////////
+// CORRECT ASPECT RATIO
+
+<div style={{width:100%, max-width:'500px'}}>
+  <Image
+    src='..'
+    alt='..'
+    width={500}
+    height={0}
+    style={{width:'500px', height:'auto'}}
+    
+    />
+</div>
