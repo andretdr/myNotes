@@ -54,5 +54,132 @@
 // SPACING
 // https://tailwindcss.com/docs/customizing-spacing
 
+// customization
+// You can override the default spacing scale using the theme.spacing section of your  tailwind.config.js file:
 
 
+// MODIFIER
+// SETTING THE SIZE TO 10 instead
+<div class="text-base/10">Hello World</div>
+
+
+// FONT SIZE
+// https://tailwindcss.com/docs/font-size
+
+// FONT 
+// https://tailwindcss.com/docs/font-family
+
+Font weight
+
+Font style
+// 
+
+
+// PSUEDO-classes
+/////////////////////
+
+:hover
+// css
+a:hover{
+ color: red
+}
+
+// tailwind
+<button class="bg-sky-500 hover:bg-sky-700 ...">
+  Save changes
+</button>
+
+
+:focus
+:active
+
+// stackable
+<button class="dark:md:hover:bg-fuchsia-600 ...">
+  Save changes
+</button>
+
+// darkmode
+// important
+
+// RESPONSIVE
+// prefix the breaksize
+
+// starts with text-xs, then goes to sm, then md
+<p class="text-xs sm:text-xl md:text-4xl">Heicoders Academy</p>
+
+// STACKING
+<h2 class="lg:text=4xl text-base italic text-gray-800 underline hover:text-blue-600 hover:no-underline active:uppercase active:text-red-600 sm:text-2xl md:text-3xl">Heicoders Academy</h2>
+
+// CONTAINERS
+sm:container
+md:container
+lg:container
+
+// SPACING
+- p
+- px
+- py
+- pl
+- pr
+- pt
+- pb
+
+- w-0
+- w-px
+- w-0.5
+- w-1
+// CUSTOM
+- w-[40%]
+- w-[30rem]
+- w-[20px]
+
+- h-0
+- h-px
+- h-0.5
+- h-1
+
+- max-w-0
+- max-w-px
+- max-w-0.5
+- max-w-1
+
+can be used with or without flex
+- space between
+
+// FLEX
+/////////////
+
+// flex-basis
+// initial SIZE
+
+// flex-direction, flow, wrap
+// GROW
+///////////
+// https://tailwindcss.com/docs/flex-grow
+
+grow-1
+
+dont grow-0
+
+shrink
+
+flex-* property is a shorthand for the combination of  flex-grow, flex-shrink, and flex-basis
+flex: <flex-grow> <flex-shrink> <flex-basis>;
+flex-1, flex 1 1 0%
+flex-auto, flex 1 1 auto;
+
+// GRID
+///////////
+
+// grid template columns
+// https://tailwindcss.com/docs/grid-template-columns
+
+// responsive grid
+// diff grid based on diff breakpoint
+
+// col span, row span
+
+// col GAP, gap-3 gap-6
+// https://tailwindcss.com/docs/gap
+
+// grid w placement
