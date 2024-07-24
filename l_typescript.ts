@@ -332,7 +332,7 @@ let strLength: number = (<string>someValue).length;
 ///////////////////
 // INDEXING
 ///////////////////
-// you want to do obj[index] but it isnt that easy...........
+// you want to do obj[index] but it isnt that easy as you need to check if the next index is null or not
 ///////////////////////////////////
 // HERE. SE200, assignment 1 Qn5
 	
@@ -421,9 +421,14 @@ carPropertyLiteral = "power"      // OK
 carPropertyLiteral = "anyOther"   // Error...
 
 
+
 // DON'T KNOW THE KEY YET?
+// https://stackoverflow.com/questions/70405503/how-to-create-recursive-type/70405610#70405610
 // [key: string]
 /////////////////////////////
 // HERE. SE200, assignment 1 Qn5
 
 https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
+
+
+
