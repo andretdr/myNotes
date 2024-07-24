@@ -420,3 +420,10 @@ carPropertyLiteral = "name"       // OK
 carPropertyLiteral = "power"      // OK
 carPropertyLiteral = "anyOther"   // Error...
 
+
+// DON'T KNOW THE KEY YET?
+// [key: string]
+/////////////////////////////
+// HERE. SE200, assignment 1 Qn5
+
+https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
