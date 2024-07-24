@@ -19,7 +19,25 @@ git config --global user.name "w3schools-test"
 git config --global user.email "test@w3schools.com"
 
 
-// 
+// INIT
+/////////
+git init // inside yr folder
+
+
+// STATUS
+///////////
+// shows you what is tracked, what isn't etc..
+git status
+
+
+// ADD
+/////////
+// add untracked files to staging area
+git add index.html
+
+// add ALL to staging area
+git add --all
+
 
 
 
