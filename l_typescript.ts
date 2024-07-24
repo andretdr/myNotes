@@ -360,3 +360,63 @@ let strLength: number = (<string>someValue).length;
 
 
 
+///////////////////////////
+// LITERAL TYPE
+///////////////////////////
+
+// This means that the object of type Greeting can have only a string value "Hello" and no other string value or any other value of any other type as shown in the following code:
+// VERY Specific
+type Greeting = "Hello"
+
+
+let greeting: Greeting
+greeting = "Hello" // OK
+greeting = "Hi"    // Error: Type '"Hi"' is not assignable to type '"Hello"'
+
+
+// union of literal types:
+//////////////////////////////
+
+type Greeting = "Hello" | "Hi" | "Welcome"
+
+let greeting: Greeting
+greeting = "Hello"       // OK
+greeting = "Hi"          // OK
+greeting = "Welcome"     // OK
+greeting = "GoodEvening" // Error: Type '"GoodEvening"' is not assignable to type greeting
+
+
+//////////////
+// KEYOF
+//////////////
+
+interface Person {
+    name: string
+    age: number
+    location: string
+}
+
+// returns union of literal types of the keys
+type NewKeyType = keyof Person
+// same as
+// type NewKeyType = "name" | "age" | "location"
+
+// you can use these
+let newTypeObject: NewKeyType
+newTypeObject = "name"           // OK
+newTypeObject = "age"            // OK
+newTypeObject = "location"       // OK
+newTypeObject = "anyOtherValue"  // Error...
+
+// KEYOF TYPEOF
+/////////////////
+
+const bmw = { name: "BMW", power: "1000hp" }
+
+type CarLiteralType = keyof typeof bmw
+
+let carPropertyLiteral: CarLiteralType
+carPropertyLiteral = "name"       // OK
+carPropertyLiteral = "power"      // OK
+carPropertyLiteral = "anyOther"   // Error...
+
