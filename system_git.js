@@ -122,7 +122,7 @@ git branch -d emergency-fix
 *** GITHUB ***
 **************
 //////////////////////////////////
-// PUSH LOCAL REPO to GitHub
+// PUSH LOCAL REPO to GitHub, SETUP
 // ORIGIN MASTER
 // 2 STEPS, ADD ORIGIN, PUSH
 //////////////////////////////////
@@ -140,7 +140,6 @@ git push --set-upstream origin master
 // https://www.w3schools.com/git/git_pull_from_remote.asp?remote=github
 // 2 STEPS, FETCH, MERGE
 //////////////
-
 
 // FETCH
 //////////
@@ -163,6 +162,13 @@ git merge origin/master
 git pull orgin
 
 
+////////////////
+// PUSHING
+////////////////
+// make sure all is added/committed locally
+
+// Push current branch to default origin
+git push origin
 
 
 
