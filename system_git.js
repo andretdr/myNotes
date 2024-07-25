@@ -198,9 +198,16 @@ git branch -a
 git checkout html-skeleton
 git branch
 
+// Pushing local branch to remote branch
+////////////////////////////////////////
 
+// have a local branch created and changes added and committed
+// from the current checkedout branch,
+git push origin <remote branch name>
+git push origin update-readme
 
-
+// pull request
+// Once this is done remote github will have a new branch, update-readme. You can go in and merge it w the master using a PULL REQUEST
 
 
 
