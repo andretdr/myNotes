@@ -210,17 +210,61 @@ git push origin update-readme
 // Once this is done remote github will have a new branch, update-readme. You can go in and merge it w the master using a PULL REQUEST
 
 
+//////////////////////////
+// GIT WORKFLOW
+// https://www.w3schools.com/git/git_github_flow.asp?remote=github
+// //////////////////////////////////////////////////////////////////
 
 
-// GIT
+// GIT FORKING
+// https://www.w3schools.com/git/git_remote_fork.asp?remote=github
+// A fork is a copy of a repository to your own repo
+// No GIT CMD, its a github thing
+//////////////////////////////////////////////////////////////////
 
-// CLONE REPO
- https://github.com/iamshaunjp/bootstrap-5-tutorial.git
 
-// CLONE BRANCH ONLY
-git clone -b lesson-1 https://github.com/iamshaunjp/bootstrap-5-tutorial.git
+// CLONE FORK FROM GITHUB
+/////////////////////////
+// clone repo to local folder
+// goto local folder, get URL from github
+git clone https://github.com/w3schools-test/w3schools-test.github.io.git
+
+
+// CONFIGURE REMOTES
+//////////////////////
+// According to Git naming conventions, it is recommended to name your own repository 'origin', and the one you forked for 'upstream'
+
+// view current remote configs
+git remote -v
+
+// rename the original origin (the source repo you forked from which is readonly)
+// rename 'origin' to 'upstream'
+git remote rename origin upstream
+
+// add your forked repo (forked repo can edit and change)
+git remote add origin https://github.com/kaijim/w3schools-test.github.io.git
+
+
+// push
+/////////////
+
+// make changes, add, commit and push
+git push origin
+
+// Then create a pull request on yr forked repo side for the main source repo
+// https://www.w3schools.com/git/git_remote_send_pull_request.asp?remote=github
+
+
+// GIT IGNORE
+// .gitignore
+///////////////
+
+https://www.w3schools.com/git/git_ignore.asp?remote=github
+
+
 
 // GITPAGES
+// https://www.w3schools.com/git/git_remote_pages.asp?remote=github
 // have to run build so yr page is not dynamic
 npm run build
 
