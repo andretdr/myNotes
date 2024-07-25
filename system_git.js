@@ -59,6 +59,7 @@ git commit -m 'First release of hello world'
 git commit -a -m 'auto commit change to hello world'
 
 
+
 // LOG
 /////////
 // commit history log
@@ -75,6 +76,7 @@ git prune -help
 
 SHIFT + G to jump the end of the list
 Use 'q' to exit readermode
+
 
 
 /////////////
@@ -98,9 +100,11 @@ git checkout -b new-hello-world-images
 // Do your changes, stage and commit
 
 
+
 ///////////
 // MERGE
 ///////////
+// Merge onto CURRENT branch
 // checkout to master first, then run merge on your branch 'emergency-fix TO master'
 git merge emergency-fix
 
@@ -111,6 +115,54 @@ git branch -d emergency-fix
 // MERGE CONFLICT
 ////////////////////
 // handle manually, then stage and commit the files affected
+
+ 
+
+**************
+*** GITHUB ***
+**************
+//////////////////////////////////
+// PUSH LOCAL REPO to GitHub
+// ORIGIN MASTER
+// 2 STEPS, ADD ORIGIN, PUSH
+//////////////////////////////////
+
+// ADD ORIGIN-> URL to your local REPO
+git remote add origin https://github.com/andretdr/gitHelloWorld.git
+
+// PUSH MASTER BRANCH TO ORIGIN
+git push --set-upstream origin master
+
+
+
+//////////////
+// PULLING
+// https://www.w3schools.com/git/git_pull_from_remote.asp?remote=github
+// 2 STEPS, FETCH, MERGE
+//////////////
+
+
+// FETCH
+//////////
+// fetch gets all the change history of a tracked branch/repo.
+git fetch origin
+
+// check status/logs
+git status
+git log origin/master
+// show the differences
+git diff origin/master
+
+// MERGE
+//////////
+git merge origin/master
+
+// PULL
+// pull is auto fetch and merge
+/////////////////////////////////
+git pull orgin
+
+
 
 
 
@@ -125,3 +177,5 @@ git clone -b lesson-1 https://github.com/iamshaunjp/bootstrap-5-tutorial.git
 // GITPAGES
 // have to run build so yr page is not dynamic
 npm run build
+
+
