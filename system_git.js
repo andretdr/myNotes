@@ -90,6 +90,10 @@ git branch hello-world-images master
 
 // check branch status
 git branch
+// check local AND remote status
+git branch -a
+// check only REMOTE status
+git branch -r
 
 // MOVE to branch
 git checkout hello-world-images
@@ -161,6 +165,12 @@ git merge origin/master
 /////////////////////////////////
 git pull orgin
 
+// fetches commits from the master branch of the origin remote (into the local origin/master branch), and then it merges origin/master into the branch you currently have checked out.
+git pull origin master 
+
+// only works if the branch you have checked out is tracking an upstream branch. For example, if the branch you have checked out tracks origin/master, git pull is equivalent to git pull origin master
+git pull 
+
 
 ////////////////
 // PUSHING
@@ -169,6 +179,29 @@ git pull orgin
 
 // Push current branch to default origin
 git push origin
+
+
+
+
+// GITHUB BRANCHES
+// https://www.w3schools.com/git/git_remote_branch.asp?remote=github
+////////////////////
+
+// Pulling remote branch to local
+/////////////////////////////////
+
+// first update local by pull from orgin
+git pull orgin
+
+// then checkout the remote branch
+git branch -a
+git checkout html-skeleton
+git branch
+
+
+
+
+
 
 
 
