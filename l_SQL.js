@@ -85,7 +85,41 @@ values 	(1, John, Doe, john.doe@example.com, 2020-01-15, Sales, 50000.00),
 		(2, Jane, Smith, jane.smith@example.com, 2019-03-20, Marketing, 55000.00)
 returning employee_id;
 
+// Select
+SELECT * FROM table_name
+SELECT town, zip FROM cities;
 
+// Calculated Columns
+////////////////////////
+Postgres can calulate simple things
+// AS gives us a new column name for the combined columns
+- Addition (+): SELECT price + tax AS total_price FROM products;
+- Subtraction (-): SELECT revenue - expenses AS profit FROM financials;
+- Multiplication (*): SELECT quantity * unit_price AS line_total FROM orders;
+- Division (/): SELECT total_distance / total_time AS average_speed FROM trips;
+- Exponentiation (^): SELECT base ^ exponent AS power_result FROM math_operations;
+- Square Root (|/): SELECT |/ area AS side_length FROM squares;
+- Cube Root (||/): SELECT ||/ volume AS side_length FROM cubes;
+- Factorial (!): SELECT 5! AS factorial_5; (calculates 5 factorial)
+- Absolute Value (@): SELECT @ temperature AS abs_temperature FROM weather_data;
+- Modulo/Remainder (%): SELECT order_id % 10 AS order_group FROM orders;
+
+select  column_a + column_b as column_sum,
+	column_a - column_b as column_minus
+from table_a
+
+// CANNOT DO THIS
+SELECT
+	price * (1 + tax_rate) AS price_with_tax,
+	// price_with_tax is not created yet
+	ROUND(price_with_tax, 2) AS rounded_price_with_tax
+FROM products;
+
+// this
+SELECT 
+  price * (1 + tax_rate) AS price_with_tax,
+  ROUND(price * (1 + tax_rate), 2) AS rounded_price_with_tax
+FROM products;
 
 
 
