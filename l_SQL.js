@@ -176,3 +176,67 @@ SELECT LENGTH('heicoders');
 // example
 select employee_id , (first_name || ' ' || last_name) as full_name, upper(department)
 from employees;
+
+
+// CONDITIONAL
+//////////////////
+
+SELECT column1, column2 FROM table_name WHERE condition;
+// compare equality
+SELECT * FROM employees WHERE department = 'IT' AND salary > 60000;
+
+// not equal
+// <> !=
+
+// ADVANCED FILTERING
+//////////////////////
+
+// IN
+SELECT *
+FROM products
+WHERE category IN ('Electronics', 'Computers', 'Accessories');
+
+SELECT *
+FROM customers
+WHERE country NOT IN ('USA', 'Canada', 'Mexico');
+
+// BETWEEN
+SELECT *
+FROM orders
+WHERE order_date BETWEEN '2023-01-01' AND '2023-12-31';
+
+// LIKE
+SELECT * FROM employee WHERE name LIKE 'J%'
+
+// NULL
+SELECT *
+FROM contacts
+WHERE phone_number IS NULL;
+
+// COMBINED
+SELECT * FROM employees 
+WHERE department = 'Sales' 
+  AND salary > 50000 
+  AND hire_date >= '2022-01-01';
+
+SELECT * FROM products 
+WHERE category = 'Electronics' 
+   OR category = 'Computers' 
+   OR price > 1000;
+
+SELECT * FROM products 
+WHERE (category = 'Electronics' OR category = 'Appliances') 
+  AND price BETWEEN 100 AND 500 
+  AND stock > 0;
+
+SELECT * FROM employees 
+WHERE department IN ('Sales', 'Marketing', 'Customer Service') 
+  AND salary > 40000 
+  AND hire_date >= '2021-01-01';
+
+SELECT * FROM orders 
+WHERE (status = 'Pending' OR status = 'Processing') 
+  AND total_amount > 500 
+  AND customer_id IN (SELECT id FROM premium_customers) 
+  AND order_date BETWEEN '2023-01-01' AND '2023-12-31';
+
