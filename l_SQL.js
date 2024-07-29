@@ -85,6 +85,15 @@ values 	(1, 'John', 'Doe', 'john.doe@example.com', TO_DATE('2020-01-15', 'YYYY-M
 	(2, 'Jane', 'Smith', 'jane.smith@example.com', TO_DATE('2019-03-20', 'YYYY-MM-DD'), 'Marketing', 55000.00)
 returning employee_id;
 
+insert into employees (employee_id, first_name, last_name, email, hire_date, department, salary)
+values 
+    (1, 'John', 'Doe', 'john.doe@example.com', '2020-01-15', 'Sales', 50000.00),
+    (2, 'Jane', 'Smith', 'jane.smith@example.com', '2019-03-20', 'Marketing', 55000.00),
+    (3, 'Mike', 'Johnson', 'mike.johnson@example.com', '2021-05-10', 'IT', 60000.00),
+    (4, 'Emily', 'Brown', 'emily.brown@example.com', '2018-11-01', 'HR', 52000.00),
+    (5, 'David', 'Lee', 'david.lee@example.com', '2022-02-28', 'Sales', 48000.00)
+returning employee_id;
+
 // Select
 SELECT * FROM table_name
 SELECT town, zip FROM cities;
@@ -121,5 +130,49 @@ SELECT
   ROUND(price * (1 + tax_rate), 2) AS rounded_price_with_tax
 FROM products;
 
+// EXAMPLE
+select employee_id, first_name, last_name, salary, salary*1.1 as increased_salary
+from employees
+
+// EXAMPLE
+select employee_id, first_name, last_name, salary, 
+	ROUND(salary/260, 2) as daily_rate, 
+	ROUND(salary/52, 2) as weekly_rate, 
+	ROUND(salary/12, 2) as monthly_rate
+from employees;
+
+// ADDITIONAL OPERATIONS
+//////////////////////////
 
 
+SELECT 'Hei' || ' Coders' AS result;
+-- Result: 'Hei Coders'
+
+SELECT 'Heicoders' || '.com' AS result;
+-- Result: 'Heicoders.com'
+
+SELECT 'h' || 'e' || 'i' AS result;
+-- Result: 'hei'
+
+SELECT CONCAT('h', 3, 'i', 'coders', '.', 'com');
+-- Result: 'h3icoders.com'
+
+SELECT CONCAT('h', 3, 'i', 'coders', NULL, '.', 'com');
+-- Result: 'h3icoders.com' (Note: NULL values are ignored)
+
+SELECT LOWER('HEICODERS');
+-- Result: 'heicoders'
+
+SELECT LOWER(column_name) FROM table_name;
+
+SELECT UPPER('heicoders');
+-- Result: 'HEICODERS'
+
+SELECT UPPER(column_name) FROM table_name;
+
+SELECT LENGTH('heicoders');
+-- Result: 9
+
+// example
+select employee_id , (first_name || ' ' || last_name) as full_name, upper(department)
+from employees;
