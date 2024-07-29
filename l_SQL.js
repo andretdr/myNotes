@@ -240,3 +240,57 @@ WHERE (status = 'Pending' OR status = 'Processing')
   AND customer_id IN (SELECT id FROM premium_customers) 
   AND order_date BETWEEN '2023-01-01' AND '2023-12-31';
 
+// example
+select first_name || ' ' || last_name as full_name, salary 
+from employees
+where department != 'IT' and salary between 45000 and 55000;
+
+select *
+	from employees
+where email like '%@%'
+and email not like '%-%';
+
+// Order of operations
+// https://www.postgresql.org/docs/current/sql-select.html
+
+// Operator Precedence
+1. :: (PostgreSQL-style typecast)
+2. [ ]  (array element selection)
+3. . (table/ column name separator)
+4. - (unary minus - i.e. the “negative sign” of a number)
+5. ^ (exponentiation)
+6. *,/,% (multiplication, division, modulo)
+7. +, - (addition, subtraction)
+8. Comparison operators (<, >, =, etc.)
+9. NOT
+10. AND
+11. OR
+
+// UPDATE
+////////////
+// IIREVERSIBLE
+
+UPDATE table_name
+SET column1 = value1, column2 = value2,...
+WHERE condition;
+
+UPDATE products
+SET price = price * 1.1, last_updated = CURRENT_TIMESTAMP
+WHERE category = 'Electronics';
+
+UPDATE products
+SET stock = stock - 1
+WHERE id = 123
+RETURNING id, name, stock;
+
+// DELETE
+//////////
+
+DELETE FROM table_name
+WHERE condition;
+
+DELETE FROM employees WHERE id = 1;
+
+DELETE FROM employees WHERE department = 'Sales';
+
+DELETE FROM employees;
