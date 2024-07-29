@@ -64,7 +64,7 @@
 
 // Create Table
 CREATE TABLE table_name (
-    column1 datatype,
+    column1 datatype PRIMARY KEY,
     column2 datatype,
     ...
 );
@@ -72,4 +72,20 @@ CREATE TABLE table_name (
 // Primary Key
 // Composite Pri Key
 // combining keys to create a unique key
+
+
+// Insertion
+INSERT INTO users (first_name, last_name, email)
+VALUES ('Mark', 'Wilson', 'mark@example.com')
+RETURNING id, first_name, last_name;
+
+
+insert into employees(employee_id, first_name, last_name, email, hire_date, department, salary)
+values 	(1, John, Doe, john.doe@example.com, 2020-01-15, Sales, 50000.00),
+		(2, Jane, Smith, jane.smith@example.com, 2019-03-20, Marketing, 55000.00)
+returning employee_id;
+
+
+
+
 
