@@ -81,8 +81,8 @@ RETURNING id, first_name, last_name;
 
 
 insert into employees(employee_id, first_name, last_name, email, hire_date, department, salary)
-values 	(1, John, Doe, john.doe@example.com, 2020-01-15, Sales, 50000.00),
-		(2, Jane, Smith, jane.smith@example.com, 2019-03-20, Marketing, 55000.00)
+values 	(1, 'John', 'Doe', 'john.doe@example.com', TO_DATE('2020-01-15', 'YYYY-MM-DD'), 'Sales', 50000.00),
+	(2, 'Jane', 'Smith', 'jane.smith@example.com', TO_DATE('2019-03-20', 'YYYY-MM-DD'), 'Marketing', 55000.00)
 returning employee_id;
 
 // Select
