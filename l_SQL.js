@@ -61,8 +61,11 @@
 // Network address types (e.g. INET, CIDR)
 // Enumerated types (ENUM)
 
-
+/////////////////////
 // Create Table
+/////////////////////
+// not null, UNIQUE, PRIMARY KEY
+
 CREATE TABLE table_name (
     column1 datatype PRIMARY KEY,
     column2 datatype,
