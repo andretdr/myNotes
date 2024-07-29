@@ -294,3 +294,138 @@ DELETE FROM employees WHERE id = 1;
 DELETE FROM employees WHERE department = 'Sales';
 
 DELETE FROM employees;
+
+// ORDERBY
+/////////////
+
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], ...;
+
+SELECT name, age 
+FROM users 
+ORDER BY age;
+
+SELECT name, age 
+FROM users 
+ORDER BY age DESC;
+
+SELECT name, age 
+FROM users 
+ORDER BY age ASC, name DESC;
+
+SELECT name FROM users ORDER BY LENGTH(name) DESC;
+
+// LIMITING
+////////////
+// Truncating with LIMIT
+
+SELECT column1, column2, ...
+FROM table_name
+LIMIT number_of_rows;
+
+SELECT *
+FROM employees
+LIMIT 5;
+
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;
+
+// offset from the top, how many items
+SELECT *
+FROM products
+LIMIT 10 OFFSET 20;
+
+Select *
+from employees
+order by salary desc 
+limit 2
+offset 2;
+
+// group by
+SELECT column1, column2, aggregate_function(column3)
+FROM table_name
+GROUP BY column1, column2;
+
+// example
+// for performing some form of aggregation on data
+CREATE TABLE sales (
+  id SERIAL PRIMARY KEY,
+  product VARCHAR(50),
+  category VARCHAR(50),
+  amount DECIMAL(10,2)
+);
+
+INSERT INTO sales (product, category, amount) VALUES
+('Laptop', 'Electronics', 1200),
+('Smartphone', 'Electronics', 800),
+('Desk', 'Furniture', 350),
+('Chair', 'Furniture', 150),
+('Tablet', 'Electronics', 500);
+
+SELECT category, SUM(amount) as total_sales
+FROM sales
+GROUP BY category;
+
+  category   | total_sales
+-------------+-------------
+ Electronics |     2500.00
+ Furniture   |      500.00
+
+
+// example
+// because you group them, you need to do some kind of aggregatin function
+
+// this doesnt work
+select *
+from employees
+group by department;
+
+// need to do some aggregation
+select department, AVG(salary) as avg_salary
+from employees
+group by department;
+
+// HAVING
+/////////////
+// CONDITIONAL, smiliar to WHERE, but for GROUPS
+// WHERE is based on table
+// HAVING applies to group
+
+SELECT column1, aggregate_function(column2)
+FROM table_name
+GROUP BY column1
+HAVING condition;
+
+SELECT category, SUM(amount) as total_sales
+FROM sales
+GROUP BY category
+HAVING SUM(amount) > 1000;
+
+// WHERE comes before GROUP BY (i.e. before grouping and aggregation)
+SELECT category, SUM(amount) as total_sales
+FROM sales
+WHERE amount > 100
+GROUP BY category;
+
+// HAVING comes after GROUP BY (i.e. after grouping and aggregation)
+SELECT category, SUM(amount) as total_sales
+FROM sales
+GROUP BY category
+HAVING SUM(amount) > 1000;
+
+// Find departments where the average salary is greater than $52,000.
+select department, AVG(salary) as avg_salary
+from employees
+group by department
+having avg(salary) > 52000;
+
+// Find the average salary of employees in departments other than HR, but only for departments with less than 3 employees.
+select department, AVG(salary) as avg_salary
+from employees
+where department != 'HR'
+group by department
+having count(*) < 3;
+
