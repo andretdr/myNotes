@@ -46,6 +46,9 @@
 // TIMESTAMP: Date and time
 // INTERVAL: Time interval
 
+select * from borrowers
+where extract(year from registration_date) = 2024
+
 // Binary Data Type
 /////////////////////
 // BYTEA: Binary data ("byte array")
