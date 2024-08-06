@@ -25,6 +25,29 @@ CREATE TABLE tests (
    highestStudent_id integer REFERENCES students (student_id)
 );
 
+// Out of line
+CREATE TABLE tests ( 
+  subject_id SERIAL,
+  subject_name text,
+  highestStudent_id integer, 
+  constraint fk_tests_students
+     foreign key (highestStudent_id) 
+     REFERENCES students (student_id)
+);
+
+/////////////////
+// ALTER TABLE
+/////////////////
+CREATE TABLE tests (
+  subject_id SERIAL,
+  subject_name text,
+  highestStudent_id integer
+);
+// alter AFTER the table is created
+ALTER TABLE tests
+    add constraint fk_tests_students
+    foreign key (highestStudent_id)
+    REFERENCES students (student_id);
 
 
 
