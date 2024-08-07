@@ -143,6 +143,9 @@ CREATE TABLE book_authors (
 //////////
 
 // Inner Join
+// ONLY INTERSECTIONS are returned
+/////////////////////////////////////////
+
 SELECT columns
 FROM table1 
 INNER JOIN table2
@@ -153,8 +156,24 @@ SELECT t1.order_id, t1.phone, t2.contact
 FROM table1 t1
 INNER JOIN table2 t2
 ON t1.column = t2.column;
-
 // inner join the prikey w the foreignkey
 
+// more then 2 tables
+select e.first_name || ' ' || e.last_name as fullname, t.territory_description 
+from employees e
+inner join employee_territories et 
+on e.employee_id = et.employee_id 
+inner join territories t 
+on et.territory_id = t.territory_id 
 
 
+// LEFT Join
+// INTERSECTIONS AND all of left (primary table) is returned.
+// considers empty entries from left, no intersections
+// A LEFT JOIN returns all rows from the left table, and the matched rows from the right table. 
+// If there's no match, NULL values are returned for columns from the right table.
+/////////////////////////////////////////
+
+select *
+from customers c // THIS IS THE LEFT TABLE for the LEFT join
+left join orders o on c.customer_id = o.customer_id 
