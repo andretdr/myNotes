@@ -272,8 +272,43 @@ SELECT
   price - LAG(price) OVER (ORDER BY price) AS price_diff
 FROM products;
 
-
 select e.employee_id, count(o.order_id), rank() over (order by count(o.order_id) desc) as rank
 from employees e 
 left join orders o on e.employee_id = o.employee_id 
 group by e.employee_id 
+
+
+// We can use window functions to compute a running total of sales amount for each region, 
+// with the running total calculated within the frame of the current row and the preceding 6 rows (i.e. a 7-row window):
+
+SELECT 
+    sales_date,
+    region,
+    amount,
+    SUM(amount) OVER (
+        PARTITION BY region 
+        ORDER BY sales_date 
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS running_total
+FROM 
+    sales
+ORDER BY 
+    region, sales_date;
+
+
+//////////////////////////////////////////////////////////////////
+// CTE to create a table, give it a name for use w subqueries
+///////////////////////////////////////////////////////////////////
+
+
+WITH cte_name AS (
+    -- CTE query definition
+    SELECT column1, column2
+    FROM table_name
+    WHERE condition
+)
+-- Main query that uses the CTE
+SELECT column1, column2
+FROM cte_name
+WHERE another_condition;
+
