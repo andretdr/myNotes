@@ -132,3 +132,10 @@ CREATE TABLE book_authors (
     UNIQUE (book_id, author_id)
 );
 
+////////////////////////////////////////////
+// ER Diagram Entity-Relationship Diagram
+////////////////////////////////////////////
+
+
+
+
