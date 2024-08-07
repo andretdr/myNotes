@@ -135,7 +135,24 @@ CREATE TABLE book_authors (
 ////////////////////////////////////////////
 // ER Diagram Entity-Relationship Diagram
 ////////////////////////////////////////////
+////////////////////////////////////////////
 
 
+//////////
+// JOIN
+//////////
 
+// Inner Join
+SELECT columns
+FROM table1 
+INNER JOIN table2
+ON table1.column = table2.column;
+
+// USING ALIAS
+SELECT t1.order_id, t1.phone, t2.contact
+FROM table1 t1
+INNER JOIN table2 t2
+ON t1.column = t2.column;
+
+// inner join the prikey w the foreignkey
 
