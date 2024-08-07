@@ -177,3 +177,39 @@ on et.territory_id = t.territory_id
 select *
 from customers c // THIS IS THE LEFT TABLE for the LEFT join
 left join orders o on c.customer_id = o.customer_id 
+
+// more than 2 tables
+select *
+from employees e 
+left join employee_territories et on e.employee_id = et.employee_id 
+left join territories t on et.territory_id = t.territory_id 
+
+// RIGHT JOIN
+///////////////////
+
+select *
+from products p // THIS IS THE LEFT TABLE for the RIGHT join
+right join categories c on c.category_id = p.category_id // C is the RIGHT TABLE
+
+
+// Full join
+// UNION
+// A FULL JOIN returns all rows when there is a match in either the left or right table. 
+// If there's no match, NULL values are returned for columns from the table without a match.
+///////////////////////////////////////////////////////////////////////////
+
+select *
+from orders o
+full join order_details od on o.order.id = od.order_id
+
+
+// CROSS JOIN
+// A CROSS JOIN is used to produce a Cartesian product of two tables. 
+// This means that each row from the first table is combined with every row from the second table.
+/////////////////
+
+SELECT p.product_name, c.colour_name
+FROM products p
+CROSS JOIN colours c;
+
+
