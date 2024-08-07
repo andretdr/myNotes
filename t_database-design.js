@@ -223,6 +223,7 @@ WHERE column_name operator (SELECT column_name FROM table2 WHERE condition);
 
 
 // Find all employees who have processed more orders than the average number of orders processed by all employees.
+// finding the average here using sub query
 
 select e.first_name || ' ' || e.last_name as full_name, count(o.order_id) as total_orders
 from employees e 
@@ -237,3 +238,42 @@ having count(o.order_id) > (
 	) as avg_order
 )
 
+
+/////////////////////////
+// WINDOW FUNCTION
+/////////////////////////
+
+// A window function always has two components:
+// 1. Function
+//     - ROW_NUMBER() etc.
+// 2. Window
+//     - How do you want to be viewing your data when you are applying your function
+//     - OVER(…)
+
+// Common window functions:
+
+// Ranking functions: ROW_NUMBER(), RANK(), DENSE_RANK()
+// Offset functions: LAG(), LEAD()
+// Aggregate functions: SUM(), AVG(), COUNT(), etc.
+// First/ last value: FIRST_VALUE(), LAST_VALUE()
+
+SELECT 
+  sale_date,
+  amount,
+  SUM(amount) OVER (
+    ORDER BY sale_date
+  ) AS running_total
+FROM sales;
+
+SELECT
+  product_name,
+  price,
+  LAG(price) OVER (ORDER BY price) AS prev_price,
+  price - LAG(price) OVER (ORDER BY price) AS price_diff
+FROM products;
+
+
+select e.employee_id, count(o.order_id), rank() over (order by count(o.order_id) desc) as rank
+from employees e 
+left join orders o on e.employee_id = o.employee_id 
+group by e.employee_id 
