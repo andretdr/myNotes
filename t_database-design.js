@@ -213,3 +213,27 @@ FROM products p
 CROSS JOIN colours c;
 
 
+///////////////////
+// SUBQUERY
+///////////////////
+
+SELECT column1, column2, ...
+FROM table1
+WHERE column_name operator (SELECT column_name FROM table2 WHERE condition);
+
+
+// Find all employees who have processed more orders than the average number of orders processed by all employees.
+
+select e.first_name || ' ' || e.last_name as full_name, count(o.order_id) as total_orders
+from employees e 
+inner join orders o ON e.employee_id = o.employee_id 
+group by e.employee_id 
+having count(o.order_id) > (
+	select AVG(order_count)
+	from (
+		select count(o.order_id) as order_count
+		from orders o 
+		group by o.employee_id 
+	) as avg_order
+)
+
