@@ -156,3 +156,5 @@ ON t1.column = t2.column;
 
 // inner join the prikey w the foreignkey
 
+
+
