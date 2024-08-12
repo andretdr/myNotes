@@ -1,4 +1,5 @@
 // PRISMA
+// https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries
 ///////////
 
 // PRISMA SCEHMA
