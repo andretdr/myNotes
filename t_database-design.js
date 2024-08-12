@@ -139,3 +139,53 @@ CREATE TABLE book_authors (
 ////////////////////////////////////////////
 
 
+
+/////////////////////
+// ACID PRINCIPLES
+/////////////////////
+
+// ATOMICITY
+// All steps to be done sucessfully, or roll back all
+
+// CONSISTENCY
+// the total balance across both accounts should remain the same before and after the transfer
+
+// ISOLATION
+// all steps can be excuted concurrenly and independant of each other
+
+// DURABILITY
+// hardware design to make sure data persists even when system crash
+
+
+
+//////////////////
+// NORMALISATION
+// design database to reduce redundancy
+// You gotta know this
+//////////////////
+
+// Primary Key
+// Relation
+// Attribute
+// Tuple
+// Domain
+// Candidate Key
+// Superkey - candidate key, or composite columns that create a candidate key
+// Foreign Key
+
+// Functional Dependency
+// Determinant
+// Transitive Dependency
+// Partial Dependency
+
+// Normal Forms
+  // First Normal Form (1NF)
+  // Second Normal Form (2NF)
+  // Third Normal Form (3NF)
+  // Achieved when a table is in 2NF and all non-key attributes are not transitively dependent on the primary key
+  // Boyce-Codd Normal Form (BCNF)
+  // Fourth Normal Form (4NF)
+  // Fifth Normal Form (5NF)
+
+
+
