@@ -210,3 +210,8 @@ CREATE TABLE book_authors (
 // 2NF
 // Alr is 1NF
 // each non-key attr must be dependant on entire pri key
+// may have to split up databse to create dependancies, mostly on composite pri keys
+
+// 3NF
+  // alr 2nF
+  // NO transitive dependancies
