@@ -215,3 +215,7 @@ CREATE TABLE book_authors (
 // 3NF
   // alr 2nF
   // NO transitive dependancies
+
+// BCNF go read up
+// 4NF
+// 5NF too optimised alr
