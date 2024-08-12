@@ -188,4 +188,16 @@ CREATE TABLE book_authors (
   // Fifth Normal Form (5NF)
 
 
+// UNF unnormalised forms, if you dont normalise yr databases
+// dirty data, repeated info etc
 
+  // Insertion Anomalies
+  // have to insert un needed data just to get the row to be created
+
+  // Deletion Anomalies
+  // on deletion, you remove data that you dont want to remove
+
+  // Update Anomalies
+  // when you need to update 1 piece of data, you have to update in many places or rows
+
+  
