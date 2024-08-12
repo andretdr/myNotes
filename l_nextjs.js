@@ -8,6 +8,8 @@
 // heicoders-app is the name of yr app
 npx create-next-app --example hello-world heicoders-app
 
+npm run dev
+
 // lets you enforce rules of typescript
 tsconfig.json
 
