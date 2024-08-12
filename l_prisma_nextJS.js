@@ -39,7 +39,9 @@ npx prisma db push // will sync DB w prism schema
 
 // can only use '@' if you include the following into tsconfig
 //   "paths": {"@/*": ["./*"]}
-import { db } from '@/db'
+
+import { db } from '../../../db'
+import { redirect } from 'next/navigation'
 
 export default function Page() {
 
@@ -76,11 +78,21 @@ async function createExpenseItem(formData: FormData) {
             </>
   )}
   
-}
-
-
 // CREATE db folder, with index.ts
 
 // index.ts
 import { PrismaClient } from '@prisma/client';
 export const db = new PrismaClient();
+
+
+///////////////////////
+// Server Component
+///////////////////////
+
+// most next components are server components
+// react- hooks all need client component
+// client side components render once on server side before pushing to client side
+
+// Server Components: Rendered on the server
+// Client Components: Initially rendered on the server, then hydrated and interactive on the client
+// Server Actions: Executed on the server
