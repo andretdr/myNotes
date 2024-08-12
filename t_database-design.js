@@ -201,3 +201,12 @@ CREATE TABLE book_authors (
   // when you need to update 1 piece of data, you have to update in many places or rows
 
   
+// 1NF (1st order form)
+// Does not use row order to convey information. Order should be irrelavant
+// Does not mix different data types within the same column
+// Does not have a table without a primary key
+// Does not have repeating groups, similar data columns
+
+// 2NF
+// Alr is 1NF
+// each non-key attr must be dependant on entire pri key
