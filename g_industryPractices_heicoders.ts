@@ -1,4 +1,4 @@
-nm // FORMS
+// FORMS
 //////////
 
 // Forms or any component is a server component. Server components cannot use hooks, only client components
@@ -279,7 +279,13 @@ const schema = z.object({
 
 export default function RegisterPage() {
 const form = useForm({
-    resolver: zodResolver(schema)
+    resolver: zodResolver(schema),
+    // use this to remove some controlled input error
+    defaultValues: {
+      name: '',
+      email: '',
+      password: ''
+    }
   });
     
   const handleRegistration = (data) => console.log(data);
@@ -340,8 +346,50 @@ const form = useForm({
             </FormItem>
           )}
           />
-
-
-            
     </div>
 
+////////////////
+// DATABASE
+////////////////
+
+prisma schema
+
+// create the schema to recieve the data
+
+              model User {
+                id    Int  @id @default(...)
+                name  String
+                email  String
+                password  String
+              }                                        }
+
+
+const handleRegistration = async (data) => {
+  try {
+    await createUser(data)
+  }
+  catch (error) {
+    console.error('Error creating user:', error)
+  }
+};
+
+
+// have another route/folder
+// create-user.tsx
+'use server';
+
+import { db } from '@/db';
+                  
+export default async function createUser(formData: {
+  name: string,
+  email: string,
+  password: string
+}) {
+  db.user.create({
+    data: {
+      name,
+      email,
+      password
+    }
+  })
+}
