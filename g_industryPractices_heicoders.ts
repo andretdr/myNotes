@@ -1,4 +1,4 @@
-// FORMS
+nm // FORMS
 //////////
 
 // Forms or any component is a server component. Server components cannot use hooks, only client components
@@ -205,6 +205,9 @@ create-next-app
 npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p // initialise and setup default values
 
+// install this in vscode
+vscode tailwind extension
+  
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -227,3 +230,118 @@ module.exports = {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+// UI component library
+// SHADCN
+// https://ui.shadcn.com/docs
+///////////////////////////////////
+
+// install
+npx shadcn-ui@latest init
+
+// from the https://ui.shadcn.com/docs/components/button install section
+npx shadcn-ui@latest add button
+
+// usage
+import { Button } from "@/components/ui/button"
+
+<Button variant="outline">Button</Button>
+
+// react hook forms
+// https://ui.shadcn.com/docs/components/form
+
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add input
+
+'use client'
+
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import * as z from 'zod';
+
+const schema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters"),
+  email: z.string().email("Invalid email address"),
+}
+
+export default function RegisterPage() {
+const form = useForm({
+    resolver: zodResolver(schema)
+  });
+    
+  const handleRegistration = (data) => console.log(data);
+  
+  return(
+    <div>
+      <h1>Create User</h1>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleRegistration)}>
+      
+          <FormField
+            control={form.control}
+            name='name'
+            render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="Name" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your full name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+          />
+
+          <FormField
+            control={form.control}
+            name='email'
+            render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input type='email' placeholder="Email" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your email.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+          />
+
+          <FormField
+            control={form.control}
+            name='password'
+            render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input type='password' placeholder="Password" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your password.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+          />
+
+
+            
+    </div>
+
