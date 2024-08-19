@@ -76,7 +76,7 @@ export default function RegisterPage() {
   })}
 />
 
-
+////////////////////////////////////////////////////
 // VALIDATION WITH ZOD, another validation library
 // dont using react-hook form validation as it is not a validation library
 // zod.dev
@@ -151,5 +151,44 @@ export default function RegisterPage() {
 
 
 
+////////////////////////
+// FORM STATE ERRORS
+////////////////////////
 
+// integrate w prev example
+'use client'
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import * as z from 'zod';
 
+const schema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters"),
+  email: z.string().email("Invalid email address"),
+}
+
+export default function RegisterPage() {
+function MyForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm({ // INCLUDINNG FORMSTATE: ERRORS to CATCH ERRORS
+    resolver: zodResolver(schema)
+  });
+    
+  const handleRegistration = (data) => console.log(data);
+    return(
+    <form onSubmit={handleSubmit(handleRegistration)}>
+      <div>
+        <label>Name</label>
+        <input name='name' {...register('name')} /> // react hook forms, need to spread register yr attributes
+        {errors.username}
+      </div>
+      <div>
+        <label>Email</label>
+        <input name='email' type='email' {...register('email')} /> // type='email' does simple email validation
+      </div>
+      <div>
+        <label>Password</label>
+        <input name='password' type='password' {...register('password')} />
+      </div>
+      <button type='submit'>Submit</button>
+    </form>
+
+  
