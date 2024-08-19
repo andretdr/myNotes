@@ -19,14 +19,7 @@ export default function RegisterPage() {
         <label>Password</label>
         <input name='password'></input>
       </div>
-    
+      <button type='submit'>Submit</button>
     </form>
-
-
-
-    
   )
-
-
-  
 }
