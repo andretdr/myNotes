@@ -40,7 +40,8 @@ export default function RegisterPage() {
 npm install react-hook-form
 
 // create components in components folder
-
+// make this a client components
+'use client'
 import {useForm} from 'react-hook-form';
 
 export default function RegisterPage() {
@@ -50,17 +51,14 @@ export default function RegisterPage() {
     <form onSubmit={handleSubmit(handleRegistration)}>
       <div>
         <label>Name</label>
-        <input name='name'></input>
         <input name='name' {...register('name')} />
       </div>
       <div>
         <label>Email</label>
-        <input name='email'></input>
         <input name='email' {...register('email')} />
       </div>
       <div>
         <label>Password</label>
-        <input name='password'></input>
         <input name='password' {...register('password')} />
       </div>
       <button type='submit'>Submit</button>
