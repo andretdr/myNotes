@@ -51,14 +51,17 @@ export default function RegisterPage() {
       <div>
         <label>Name</label>
         <input name='name'></input>
+        <input name='name' {...register('name')} />
       </div>
       <div>
         <label>Email</label>
         <input name='email'></input>
+        <input name='email' {...register('email')} />
       </div>
       <div>
         <label>Password</label>
         <input name='password'></input>
+        <input name='password' {...register('password')} />
       </div>
       <button type='submit'>Submit</button>
     </form>
