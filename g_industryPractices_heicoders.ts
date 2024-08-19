@@ -192,3 +192,38 @@ function MyForm() {
     </form>
 
   
+
+
+
+///////////////////
+// TAILWIND SETUP
+///////////////////
+
+// setup tailwind and all using
+create-next-app
+
+npm i -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p // initialise and setup default values
+
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [ // paths where you want tailwind to run
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+ 
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+// globals.css
+// ensure this is present in yr app folder
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
