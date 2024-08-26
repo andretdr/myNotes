@@ -219,3 +219,51 @@ CREATE TABLE book_authors (
 // BCNF go read up
 // 4NF
 // 5NF too optimised alr
+
+
+
+//////////////////////
+// DATABSE MIGRATION
+//////////////////////
+
+remove --turbo from package.json // not compatible
+
+npx prisma generate
+// creates prisma client
+
+create .env file
+
+npx prisma db push
+// are you sure you want to push? will overwrite if incompatible
+
+// run this in dbeaver
+INSERT INTO "User" (name, email, password) VALUES
+('Alice Jones', 'alice.jones@example.com', 'password123'),
+('Bob Smith', 'bob.smith@example.com', 'mypassw0rd'),
+('Carol White', 'carol.white@example.com', 'carol2024');
+
+// Now add new fields into schema
+  firstName String
+  lastName  String
+  age       Int
+  city      String
+  country   String
+
+// regenerate and push
+npx prisma generate
+
+npx prisma db push
+// only if dev, NOT Production
+// you will get warning, you already have existing records. If carry on, will overwrite yr records
+
+
+// NOW remove the name line and repush
+npx prisma generate
+npx prisma db push
+// no warnings as you have no prev records
+
+/////////////////////
+// INCREMENTAL MIGRATION
+/////////////////////
+
+npx prisma migrate dev --name init
