@@ -45,4 +45,25 @@ https://developer.chrome.com/docs/lighthouse/overview
 security
 https://observatory.mozilla.org/
 
+
+CACHING
+  Memoization 
+    optimise requests, then go to server
+  - The cache only lasts the lifetime of a server request until the React component tree has finished rendering
+  - Memoisation only applies to the GET method in fetch requests
+  - if no use fetch, get, then use cache
+
+
+import { cache } from 'react'
+import db from '@/lib/db'
+ 
+export const getCred = cache(async (credentials) => {
+  const cred = await db.user.findUnique({where : {email: credentials.email as string}});
+  return cred
+})
+
+  
+  Data Cache
+  - more persistent storage cache attached to server
+  - 
   
