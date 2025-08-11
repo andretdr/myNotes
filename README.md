@@ -19,7 +19,12 @@ install linux subsystem
 - turn on hyper-v, virtual machine platform, linux subsystem
 - install https://learn.microsoft.com/en-us/windows/wsl/install
 
-  
+In new Ubuntu terminal
+
+sudo apt install python3
+sudo apt install python3-pip
+sudo apt install python3.12-venv
+
 
 
 # New project from GitHub
