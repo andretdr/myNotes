@@ -24,7 +24,7 @@ In new Ubuntu terminal
 sudo apt install python3   
 sudo apt install python3-pip   
 sudo apt install python3.12-venv   
-   
+sudo apt install cmake  # version 3.27.8-1build1   
 
 
 # New project from GitHub
