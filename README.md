@@ -21,10 +21,10 @@ install linux subsystem
 
 In new Ubuntu terminal
 
-sudo apt install python3
-sudo apt install python3-pip
-sudo apt install python3.12-venv
-
+sudo apt install python3   
+sudo apt install python3-pip   
+sudo apt install python3.12-venv   
+   
 
 
 # New project from GitHub
